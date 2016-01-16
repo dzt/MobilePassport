@@ -1,7 +1,7 @@
 # MobilePassport
 Authentication with Passport.js on Mobile
 
-<img src="art/high.png">
+<img src="art/res/mipmap-xxxhdpi/ic_launcher.png">
 
 # API Reference
 
