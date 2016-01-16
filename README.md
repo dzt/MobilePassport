@@ -11,3 +11,15 @@ Authentication with Passport.js on Mobile
 | /user/:id | DELETE |                                                          Deleted                                                          | Unauthorized   |        Delete yourself nerd.        |                                     |
 | /user/:id |   GET  | { "_id": "569998f20d3f752c66c421ef", "email": "example@me.com", "username": "example", "name": "Example User", "__v": 0 } |  Not Logged In |            User not found           |                                     |
 |  /logout  |  POST  |                                                         Logged out                                                        |  Not Logged In | Logout as currently logged in user. |            None Required            |
+
+Note: In order to run the Node.js server you must create a file under the name of `.env` and make sure to add your own API Keys
+
+```
+
+MONGOLAB_URI=< Your MongoDB URI without the "<" and ">" >
+
+```
+
+Licensed under the **[MIT License] [license]**.
+
+[license]: https://github.com/dzt/MobilePassport/blob/master/LICENSE
