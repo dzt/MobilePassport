@@ -49,7 +49,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:backgroundTint="@color/colorPrimary"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:onClick="login" />
 
     <Button
         android:layout_width="wrap_content"
@@ -62,7 +63,8 @@
         android:layout_alignLeft="@+id/loginBtn"
         android:layout_alignStart="@+id/loginBtn"
         android:backgroundTint="@color/colorPrimary"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:onClick="register" />
 
     <ImageView
         android:layout_width="wrap_content"

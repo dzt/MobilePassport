@@ -11,9 +11,7 @@ import com.loopj.android.http.PersistentCookieStore;
 import com.loopj.android.http.RequestParams;
 import com.petersoboyejo.mobilepassport.R;
 import com.petersoboyejo.mobilepassport.activities.LoginActivity;
-
 import cz.msebera.android.httpclient.Header;
-
 
 public class AsyncClient {
     private static final String BASE_URL = "https://f505e24d.ngrok.io/";
@@ -30,6 +28,11 @@ public class AsyncClient {
     public static void post(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
         client.post(getAbsoluteUrl(url), params, responseHandler);
         Log.v("AsyncClient - POST", getAbsoluteUrl(url));
+    }
+
+    public static void put(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
+        client.put(getAbsoluteUrl(url), params, responseHandler);
+        Log.v("AsyncClient - PUT", getAbsoluteUrl(url));
     }
 
     public static void delete(String url, Header[] headers, Context context, AsyncHttpResponseHandler responseHandler) {

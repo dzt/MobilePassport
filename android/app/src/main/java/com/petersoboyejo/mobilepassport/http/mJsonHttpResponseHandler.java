@@ -12,9 +12,7 @@ import com.petersoboyejo.mobilepassport.activities.LoginActivity;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import cz.msebera.android.httpclient.Header;
-
 
 public class mJsonHttpResponseHandler extends JsonHttpResponseHandler {
 
