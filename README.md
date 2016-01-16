@@ -20,6 +20,12 @@ MONGOLAB_URI=< Your MongoDB URI without the "<" and ">" >
 
 ```
 
+Install the packages by running
+`npm install`
+
+Run the application by typing
+`node app.js`
+
 Licensed under the **[MIT License] [license]**.
 
 [license]: https://github.com/dzt/MobilePassport/blob/master/LICENSE
