@@ -1,6 +1,8 @@
 # MobilePassport
 Authentication with Passport.js on Mobile
 
+<img src="art/high.png">
+
 # API Reference
 
 |    URL    | Method |                                                 Success Response (200 OK)                                                 | Error Response |             Description             |              Parameters             |
