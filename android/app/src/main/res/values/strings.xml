@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MobilePassport</string>
+
+    <string name="code_0">Connection timeout</string>
+    <string name="code_404">Resource not avaliable</string>
+    <string name="e_session_expired">Your session has expired</string>
+    <string name="e_cant_be_empty">This field can\'t be empty</string>
+    <string name="e_petition">Request error</string>
+    <string name="server_response">SERVER_RESPONSE</string>
+    <string name="server_message">SERVER_MESSAGE</string>
+
+</resources>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LoginActivity">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/include" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/user"
+        android:layout_below="@+id/include"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp"
+        android:hint="Username"
+        android:layout_toRightOf="@+id/imageView7"
+        android:layout_toEndOf="@+id/imageView7" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/pswd"
+        android:layout_marginTop="24dp"
+        android:hint="Password"
+        android:layout_below="@+id/user"
+        android:layout_alignRight="@+id/user"
+        android:layout_alignEnd="@+id/user"
+        android:layout_alignLeft="@+id/user"
+        android:layout_alignStart="@+id/user" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGIN"
+        android:id="@+id/loginBtn"
+        android:layout_below="@+id/pswd"
+        android:layout_marginTop="34dp"
+        android:layout_alignRight="@+id/pswd"
+        android:layout_alignEnd="@+id/pswd"
+        android:layout_alignLeft="@+id/imageView8"
+        android:layout_alignStart="@+id/imageView8"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGISTER"
+        android:id="@+id/registerBtn"
+        android:layout_below="@+id/loginBtn"
+        android:layout_alignRight="@+id/loginBtn"
+        android:layout_alignEnd="@+id/loginBtn"
+        android:layout_alignLeft="@+id/loginBtn"
+        android:layout_alignStart="@+id/loginBtn"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="#ffffff" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView7"
+        android:layout_alignBottom="@+id/user"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/circledude"
+        android:layout_alignTop="@+id/user"
+        android:layout_marginLeft="10dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView8"
+        android:src="@drawable/circlelock"
+        android:layout_alignBottom="@+id/pswd"
+        android:layout_toLeftOf="@+id/pswd"
+        android:layout_toStartOf="@+id/pswd"
+        android:layout_alignTop="@+id/pswd" />
+
+</RelativeLayout>
