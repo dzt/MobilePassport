@@ -1,6 +1,8 @@
 # MobilePassport
 Authentication with Passport.js on Mobile
 
+# API Reference
+
 |    URL    | Method |                                                 Success Response (200 OK)                                                 | Error Response |             Description             |              Parameters             |
 |:---------:|:------:|:-------------------------------------------------------------------------------------------------------------------------:|:--------------:|:-----------------------------------:|:-----------------------------------:|
 |   /login  |   GET  | { "_id": "569998f20d3f752c66c421ef", "email": "example@me.com", "username": "example", "name": "Example User", "__v": 0 } |  Unauthorized  |       Login as existing user,       |         username & password         |
