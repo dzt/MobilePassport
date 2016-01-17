@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,9 +16,10 @@ import com.petersoboyejo.mobilepassport.R;
 import com.petersoboyejo.mobilepassport.http.AsyncClient;
 import com.petersoboyejo.mobilepassport.http.mJsonHttpResponseHandler;
 
-import org.apache.http.Header;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -31,6 +33,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        setTitle("Login");
 
         username = (EditText) findViewById(R.id.user);
         password = (EditText) findViewById(R.id.pswd);
@@ -46,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         params.put("password", password.getText().toString());
 
         AsyncClient.post("/login", params, new mJsonHttpResponseHandler(this) {
-            //@Override
+            @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 try {
                     if (response.getInt(context.getString(R.string.server_response)) == 1) {

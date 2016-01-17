@@ -6,6 +6,9 @@ module.exports = function(app, passport) {
     // Login [x]
     app.post('/login', users.login);
 
+    // Register [x]
+    app.put('/signup', users.create); 
+
     // Search For User by ID [x]
     app.get('/user/search/:id', users.read);
 
@@ -15,16 +18,13 @@ module.exports = function(app, passport) {
     // My Profile for Currently Logged in User [x]
     app.get('/user/profile', isLoggedIn, users.me); 
 
-    // Register [x]
-    app.put('/signup', users.create); 
-
     // Update As Currently Logged In User [x]
     app.post('/user/update', isLoggedIn, users.update);
 
     // Delete Currently Logged in User [x]
     app.delete('/user/delete', isLoggedIn, users.delete);
 
-    // Log Out [x]
+    // Log Out As Current User [x]
     app.post('/logout', function(req, res) {
         req.logout();
         res.end('Logged out')

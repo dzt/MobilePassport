@@ -42,7 +42,7 @@
         android:layout_below="@+id/editText2"
         android:layout_alignRight="@+id/editText2"
         android:layout_alignEnd="@+id/editText2"
-        android:hint="New Password"
+        android:hint="Email Address"
         android:layout_marginTop="10dp"
         android:layout_alignLeft="@+id/editText2"
         android:layout_alignStart="@+id/editText2" />
@@ -50,20 +50,20 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="REGISTER"
+        android:text="UPDATE"
         android:id="@+id/button"
         android:backgroundTint="@color/colorPrimary"
         android:textColor="#ffffff"
-        android:layout_below="@+id/editText3"
+        android:layout_below="@+id/editText5"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="30dp"
-        android:layout_alignRight="@+id/editText3"
-        android:layout_alignEnd="@+id/editText3" />
+        android:layout_marginTop="20dp" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/imageView3"
         android:src="@drawable/circledude"
         android:layout_alignBottom="@+id/editText"
@@ -72,8 +72,8 @@
         android:layout_alignTop="@+id/editText" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/imageView4"
         android:src="@drawable/circlea"
         android:layout_alignTop="@+id/editText2"
@@ -82,10 +82,10 @@
         android:layout_alignBottom="@+id/editText2" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/imageView5"
-        android:src="@drawable/circlelock"
+        android:src="@drawable/circleemail"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignBottom="@+id/editText3"
@@ -103,5 +103,28 @@
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/button"
         android:layout_alignEnd="@+id/button" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/editText5"
+        android:hint="New Password"
+        android:layout_below="@+id/editText3"
+        android:layout_toRightOf="@+id/imageView5"
+        android:layout_alignRight="@+id/editText3"
+        android:layout_alignEnd="@+id/editText3"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/imageView9"
+        android:src="@drawable/circlelock"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/editText5"
+        android:layout_alignBottom="@+id/editText5" />
 
 </RelativeLayout>

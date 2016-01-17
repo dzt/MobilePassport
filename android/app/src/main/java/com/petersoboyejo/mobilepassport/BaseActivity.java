@@ -39,6 +39,7 @@ public class BaseActivity extends ActionBarActivity {
         // Set a ToolBar to replace the ActionBar.
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         // Find our drawer view
         nvDrawer = (NavigationView) findViewById(R.id.nvView);
         // Setup drawer view
