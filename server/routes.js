@@ -3,25 +3,13 @@ var express = require('express');
 
 module.exports = function(app, passport) {
 
-    // Login
-    app.post('/login', function(req, res, next) {
-        passport.authenticate('local', function(err, user, info) {
-            if (err)
-                return next(err);
-            if (!user)
-                return res.json({ SERVER_RESPONSE: 0, SERVER_MESSAGE: "Wrong credentials" });
-            req.logIn(user, function(err) {
-                if (err)
-                    return next(err);
-                return res.json({ SERVER_RESPONSE: 1, SERVER_MESSAGE: "Logged in!" });
-            });
-        })(req, res, next);
-    });
+    // Login [x]
+    app.post('/login', users.login);
 
-    // Search For User by ID
-    app.get('/user/:id', users.read);
+    // Search For User by ID [x]
+    app.get('/user/search/:id', users.read);
 
-    // Search For User by Username
+    // Search For User by Username [x]
     app.get('/user/search/:username', users.readByUsername);
 
     // My Profile 
@@ -30,7 +18,7 @@ module.exports = function(app, passport) {
     // Register [x]
     app.put('/signup', users.create); 
 
-    // Update As Current User [x]
+    // Update As Currently Logged In User [x]
     app.post('/user/update', isLoggedIn, users.update);
 
     // Delete Currently Logged in User [x]

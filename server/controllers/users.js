@@ -1,5 +1,5 @@
 var User = require('../models/user');
-var imgs = ['png', 'jpg', 'jpeg', 'gif', 'bmp'];
+var passport = require('passport');
 
 module.exports = {};
 
@@ -29,12 +29,27 @@ module.exports.create = function(req, res) {
     });
 };
 
+module.exports.login = function(req, res, next) {
+        passport.authenticate('local', function(err, user, info) {
+            if (err)
+                return next(err);
+            if (!user)
+                return res.json({ SERVER_RESPONSE: 0, SERVER_MESSAGE: "Wrong credentials" });
+            req.logIn(user, function(err) {
+                if (err)
+                    return next(err);
+                return res.json({ SERVER_RESPONSE: 1, SERVER_MESSAGE: "Logged in!" });
+            });
+        })(req, res, next);
+};
+
 module.exports.read = function(req, res) {
     User.findById(req.params.id, function(err, user) {
         if (user) {
             res.writeHead(200, {"Content-Type": "application/json"});
             user = user.toObject();
             delete user.password;
+            delete user.__v;
             res.end(JSON.stringify(user));
         } else {
             return res.status(400).end('User not found');
@@ -48,6 +63,7 @@ module.exports.readByUsername = function(req, res) {
             res.writeHead(200, {"Content-Type": "application/json"});
             user = user.toObject();
             delete user.password;
+            delete user.__v;
             res.end(JSON.stringify(user));
         } else {
             return res.status(400).end('User not found');
