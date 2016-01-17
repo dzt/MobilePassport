@@ -73,8 +73,18 @@ module.exports.readByUsername = function(req, res) {
 
 module.exports.me = function(req, res) {
 
-    // res.end(JSON.stringify(user));
-    console.log(req.user);
+    User.findOne({ username: req.user.username }, function(err, user) {
+        if (user) {
+            res.writeHead(200, {"Content-Type": "application/json"});
+            user = user.toObject();
+            delete user.password;
+            delete user.__v;
+            res.end(JSON.stringify(user));
+        } else {
+            return res.status(400).end('User not found');
+        }
+    });
+    
 };
 
 module.exports.update = function(req, res) {

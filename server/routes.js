@@ -12,7 +12,7 @@ module.exports = function(app, passport) {
     // Search For User by Username [x]
     app.get('/user/search/:username', users.readByUsername);
 
-    // My Profile 
+    // My Profile for Currently Logged in User [x]
     app.get('/user/profile', isLoggedIn, users.me); 
 
     // Register [x]
