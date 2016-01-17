@@ -42,8 +42,27 @@ module.exports.read = function(req, res) {
     });
 };
 
+module.exports.readByUsername = function(req, res) {
+    User.findOne({ username: req.params.username }, function(err, user) {
+        if (user) {
+            res.writeHead(200, {"Content-Type": "application/json"});
+            user = user.toObject();
+            delete user.password;
+            res.end(JSON.stringify(user));
+        } else {
+            return res.status(400).end('User not found');
+        }
+    });
+};
+
+module.exports.me = function(req, res) {
+
+    // res.end(JSON.stringify(user));
+    console.log(req.user);
+};
+
 module.exports.update = function(req, res) {
-    User.findById(req.params.id, function(err, user) {
+    User.findById(req.user.id, function(err, user) {
         if (user) {
             if (user.username != req.user.username) {
                 return res.status(401).end('Modifying other user');
@@ -65,12 +84,8 @@ module.exports.update = function(req, res) {
     });
 };
 
-module.exports.profile = function(req, res) {
-    res.end(JSON.stringify(user));
-};
-
 module.exports.delete = function(req, res) {
-    User.remove({_id: req.params.id}, function(err) {
+    User.remove({_id: req.user.id}, function(err) {
         res.end('Deleted')
-    });
+});
 };

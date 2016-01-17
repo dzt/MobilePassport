@@ -1,7 +1,9 @@
 var users  = require('./controllers/users');
+var express = require('express');
 
 module.exports = function(app, passport) {
 
+    // Login
     app.post('/login', function(req, res, next) {
         passport.authenticate('local', function(err, user, info) {
             if (err)
@@ -15,11 +17,26 @@ module.exports = function(app, passport) {
             });
         })(req, res, next);
     });
+
+    // Search For User by ID
     app.get('/user/:id', users.read);
-    app.get('/user/myProfile/' + req.user._id, isLoggedIn, users.read); 
+
+    // Search For User by Username
+    app.get('/user/search/:username', users.readByUsername);
+
+    // My Profile 
+    app.get('/user/profile', isLoggedIn, users.me); 
+
+    // Register [x]
     app.put('/signup', users.create); 
-    app.post('/user/:id', isLoggedIn, users.update);
-    app.delete('/user/:id', isLoggedIn, users.delete); // example: localhost:3000/user/56918c9fb764de20280b2ef0
+
+    // Update As Current User [x]
+    app.post('/user/update', isLoggedIn, users.update);
+
+    // Delete Currently Logged in User [x]
+    app.delete('/user/delete', isLoggedIn, users.delete);
+
+    // Log Out [x]
     app.post('/logout', function(req, res) {
         req.logout();
         res.end('Logged out')

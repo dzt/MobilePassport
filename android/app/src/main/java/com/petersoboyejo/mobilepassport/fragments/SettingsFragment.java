@@ -39,11 +39,10 @@ public class SettingsFragment extends Fragment {
                         .setCancelable(false)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {   
+                            public void onClick(DialogInterface dialogInterface, int i) {
 
-                                String del = "/user/" + ;
 
-                                AsyncClient.delete(del, null, getContext(), new mJsonHttpResponseHandler(getContext()) {
+                                AsyncClient.delete("/user/delete", null, getContext(), new mJsonHttpResponseHandler(getContext()) {
                                     @Override
                                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                                         super.onSuccess(statusCode, headers, response);
