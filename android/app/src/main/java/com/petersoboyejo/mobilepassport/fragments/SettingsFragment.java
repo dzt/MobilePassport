@@ -3,7 +3,6 @@ package com.petersoboyejo.mobilepassport.fragments;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,7 +33,7 @@ public class SettingsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
 
         final EditText nameET = (EditText) rootView.findViewById(R.id.editText2);
-        final EditText usernameET = (EditText) rootView.findViewById(R.id.editText);
+        final EditText usernameET = (EditText) rootView.findViewById(R.id.userSearch);
         final EditText emailET = (EditText) rootView.findViewById(R.id.editText3);
 
         AsyncClient.get("/user/profile", null, new mJsonHttpResponseHandler(getContext()) {

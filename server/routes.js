@@ -10,10 +10,10 @@ module.exports = function(app, passport) {
     app.put('/signup', users.create); 
 
     // Search For User by ID [x]
-    app.get('/user/search/:id', users.read);
+    app.get('/user/search/id/:id', users.read);
 
     // Search For User by Username [x]
-    app.get('/user/search/:username', users.readByUsername);
+    app.get('/user/search/username/:username', users.readByUsername);
 
     // My Profile for Currently Logged in User [x]
     app.get('/user/profile', isLoggedIn, users.me); 

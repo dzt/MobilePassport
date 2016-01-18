@@ -11,7 +11,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/user"
+        android:id="@+id/user_search"
         android:layout_below="@+id/include"
         android:layout_marginTop="30dp"
         android:layout_alignParentRight="true"
@@ -29,11 +29,11 @@
         android:id="@+id/pswd"
         android:layout_marginTop="24dp"
         android:hint="Password"
-        android:layout_below="@+id/user"
-        android:layout_alignRight="@+id/user"
-        android:layout_alignEnd="@+id/user"
-        android:layout_alignLeft="@+id/user"
-        android:layout_alignStart="@+id/user" />
+        android:layout_below="@+id/user_search"
+        android:layout_alignRight="@+id/user_search"
+        android:layout_alignEnd="@+id/user_search"
+        android:layout_alignLeft="@+id/user_search"
+        android:layout_alignStart="@+id/user_search" />
 
     <Button
         android:layout_width="wrap_content"
@@ -70,11 +70,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView7"
-        android:layout_alignBottom="@+id/user"
+        android:layout_alignBottom="@+id/user_search"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:src="@drawable/circledude"
-        android:layout_alignTop="@+id/user"
+        android:layout_alignTop="@+id/user_search"
         android:layout_marginLeft="10dp" />
 
     <ImageView

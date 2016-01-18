@@ -6,10 +6,6 @@
             android:title="Home"></item>
 
         <item
-            android:id="@+id/nav_gh"
-            android:title="GitHub Repo"></item>
-
-        <item
             android:id="@+id/nav_settings"
             android:title="Settings"></item>
 

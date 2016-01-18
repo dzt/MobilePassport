@@ -18,7 +18,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class AsyncClient {
 
-    private static final String BASE_URL = "http://a6295330.ngrok.io/";
+    private static final String BASE_URL = "http://a6295330.ngrok.io";
     PersistentCookieStore cookieStore;
 
     private static AsyncHttpClient client = new AsyncHttpClient();

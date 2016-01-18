@@ -73,9 +73,6 @@ public class BaseActivity extends ActionBarActivity {
             case R.id.nav_home: // home
                 fragment = new HomeFragment();
                 break;
-            case R.id.nav_gh: // github
-                goToDonatePage();
-                break;
             case R.id.nav_settings: // settings
                 fragment = new SettingsFragment();
                 break;

@@ -12,7 +12,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/userSearch"
         android:layout_alignParentTop="true"
         android:layout_marginTop="28dp"
         android:layout_alignParentRight="true"
@@ -26,9 +26,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/editText2"
         android:hint="Full Name"
-        android:layout_below="@+id/editText"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText"
+        android:layout_below="@+id/userSearch"
+        android:layout_alignRight="@+id/userSearch"
+        android:layout_alignEnd="@+id/userSearch"
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/imageView3"
         android:layout_toEndOf="@+id/imageView3" />
@@ -66,10 +66,10 @@
         android:layout_height="50dp"
         android:id="@+id/imageView3"
         android:src="@drawable/circledude"
-        android:layout_alignBottom="@+id/editText"
+        android:layout_alignBottom="@+id/userSearch"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/editText" />
+        android:layout_alignTop="@+id/userSearch" />
 
     <ImageView
         android:layout_width="50dp"
