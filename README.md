@@ -1,8 +1,8 @@
+<img src="art/res/mipmap-xxxhdpi/ic_launcher.png">
 # MobilePassport
 Authentication with Passport.js on Mobile
 Created by <a href="http://petersoboyejo.com">Peter</a> and <a href="http://ichauster.github.io">Ivan Chau</a>.
 
-<img src="art/res/mipmap-xxxhdpi/ic_launcher.png">
 <img src="art/prev.png">
 
 # API Reference
