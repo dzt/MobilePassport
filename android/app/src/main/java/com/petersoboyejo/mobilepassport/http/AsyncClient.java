@@ -39,6 +39,11 @@ public class AsyncClient {
         Log.v("AsyncClient - DELETE", getAbsoluteUrl(url));
     }
 
+    public static void put(String url, Header[] headers, Context context, AsyncHttpResponseHandler responseHandler) {
+        client.delete(context, getAbsoluteUrl(url), headers, responseHandler);
+        Log.v("AsyncClient - PUT", getAbsoluteUrl(url));
+    }
+
     private static String getAbsoluteUrl(String relativeUrl) {
         return BASE_URL + relativeUrl;
     }
