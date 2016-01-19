@@ -128,7 +128,7 @@ public class HomeFragment extends Fragment {
                         email = response.getString("email");
                         usernmae = "@" + response.getString("username");
 
-                        CircleImageView mCircleImageView = (CircleImageView) rootView.findViewById(R.id.profile_image);
+                        CircleImageView mCircleImageView = (CircleImageView) rootView.findViewById(R.id.profile_image_search);
                         String gravatarUrl = Gravatar.init().with(email).build();
 
                         Picasso.with(getContext())

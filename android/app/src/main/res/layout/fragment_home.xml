@@ -7,7 +7,7 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
     xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/profile_image"
+        android:id="@+id/profile_image_search"
         android:layout_width="96dp"
         android:layout_height="96dp"
         app:civ_border_width="2dp"
@@ -78,7 +78,7 @@
         android:gravity="center_horizontal"
         android:textStyle="bold"
         android:textColor="#a9a9a9"
-        android:layout_below="@+id/profile_image"
+        android:layout_below="@+id/profile_image_search"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
