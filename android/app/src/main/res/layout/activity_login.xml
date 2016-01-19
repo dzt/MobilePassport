@@ -87,4 +87,15 @@
         android:layout_toStartOf="@+id/pswd"
         android:layout_alignTop="@+id/pswd" />
 
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember Me"
+        android:id="@+id/cb_remember"
+        android:layout_below="@+id/pswd"
+        android:layout_alignRight="@+id/pswd"
+        android:layout_alignEnd="@+id/pswd"
+        android:checked="true"
+        android:layout_marginRight="5dp" />
+
 </RelativeLayout>

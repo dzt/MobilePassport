@@ -21,6 +21,9 @@ module.exports = function(app, passport) {
     // Update As Currently Logged In User [x]
     app.post('/user/update', isLoggedIn, users.update);
 
+    // Update Your Profile Pircture when logged in [x]
+    // app.post('/user/update/profileImage', isLoggedIn, users.profileImg);
+
     // Delete Currently Logged in User [x]
     app.delete('/user/delete', isLoggedIn, users.delete);
 

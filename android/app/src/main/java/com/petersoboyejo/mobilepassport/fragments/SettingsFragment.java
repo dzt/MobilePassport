@@ -2,6 +2,7 @@ package com.petersoboyejo.mobilepassport.fragments;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.petersoboyejo.mobilepassport.R;
+import com.petersoboyejo.mobilepassport.activities.LoginActivity;
 import com.petersoboyejo.mobilepassport.http.AsyncClient;
 import com.petersoboyejo.mobilepassport.http.mJsonHttpResponseHandler;
 
@@ -81,8 +83,11 @@ public class SettingsFragment extends Fragment {
                                         super.onSuccess(statusCode, headers, response);
                                             if (response == "Deleted") {
                                                 Toast.makeText(getContext(), "Your account has been successfully deleted.", Toast.LENGTH_SHORT).show();
-                                                AsyncClient.redirectToLogin(getContext());
-                                            } else AsyncClient.redirectToLogin(getContext());
+                                                Intent intent = new Intent(getContext(), LoginActivity.class);
+                                                startActivity(intent);
+                                            } else {
+                                                Toast.makeText(getContext(), "An Error has occurred when trying to delete your account.", Toast.LENGTH_SHORT).show();
+                                            }
                                         }
                                 });
                             }

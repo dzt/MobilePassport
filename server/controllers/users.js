@@ -87,6 +87,7 @@ module.exports.me = function(req, res) {
     
 };
 
+
 module.exports.update = function(req, res) {
     User.findById(req.user.id, function(err, user) {
         if (user) {
