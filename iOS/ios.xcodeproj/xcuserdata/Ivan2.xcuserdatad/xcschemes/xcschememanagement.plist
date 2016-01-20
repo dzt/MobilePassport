@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>MobilePassport-iOS.xcscheme</key>
+		<key>ios.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>ED9B38311C4D72D600FC45B6</key>
+		<key>ED9B386B1C4F121100FC45B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ED9B38451C4D72DC00FC45B6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>ED9B38501C4D72DD00FC45B6</key>
+		<key>ED9B387F1C4F121100FC45B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

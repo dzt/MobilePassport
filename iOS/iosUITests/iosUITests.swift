@@ -1,14 +1,14 @@
 //
-//  MobilePassport_iOSUITests.swift
-//  MobilePassport-iOSUITests
+//  iosUITests.swift
+//  iosUITests
 //
-//  Created by Ivan Chau on 1/18/16.
+//  Created by Ivan Chau on 1/19/16.
 //  Copyright © 2016 Ivan Chau & Peter Soboyejo. All rights reserved.
 //
 
 import XCTest
 
-class MobilePassport_iOSUITests: XCTestCase {
+class iosUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

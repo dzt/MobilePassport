@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ED9B38311C4D72D600FC45B6"
-               BuildableName = "MobilePassport-iOS.app"
-               BlueprintName = "MobilePassport-iOS"
-               ReferencedContainer = "container:MobilePassport-iOS.xcodeproj">
+               BlueprintIdentifier = "ED9B386B1C4F121100FC45B6"
+               BuildableName = "ios.app"
+               BlueprintName = "ios"
+               ReferencedContainer = "container:ios.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ED9B38451C4D72DC00FC45B6"
-               BuildableName = "MobilePassport-iOSTests.xctest"
-               BlueprintName = "MobilePassport-iOSTests"
-               ReferencedContainer = "container:MobilePassport-iOS.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ED9B38501C4D72DD00FC45B6"
-               BuildableName = "MobilePassport-iOSUITests.xctest"
-               BlueprintName = "MobilePassport-iOSUITests"
-               ReferencedContainer = "container:MobilePassport-iOS.xcodeproj">
+               BlueprintIdentifier = "ED9B387F1C4F121100FC45B6"
+               BuildableName = "iosUITests.xctest"
+               BlueprintName = "iosUITests"
+               ReferencedContainer = "container:ios.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ED9B38311C4D72D600FC45B6"
-            BuildableName = "MobilePassport-iOS.app"
-            BlueprintName = "MobilePassport-iOS"
-            ReferencedContainer = "container:MobilePassport-iOS.xcodeproj">
+            BlueprintIdentifier = "ED9B386B1C4F121100FC45B6"
+            BuildableName = "ios.app"
+            BlueprintName = "ios"
+            ReferencedContainer = "container:ios.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +65,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ED9B38311C4D72D600FC45B6"
-            BuildableName = "MobilePassport-iOS.app"
-            BlueprintName = "MobilePassport-iOS"
-            ReferencedContainer = "container:MobilePassport-iOS.xcodeproj">
+            BlueprintIdentifier = "ED9B386B1C4F121100FC45B6"
+            BuildableName = "ios.app"
+            BlueprintName = "ios"
+            ReferencedContainer = "container:ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +84,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ED9B38311C4D72D600FC45B6"
-            BuildableName = "MobilePassport-iOS.app"
-            BlueprintName = "MobilePassport-iOS"
-            ReferencedContainer = "container:MobilePassport-iOS.xcodeproj">
+            BlueprintIdentifier = "ED9B386B1C4F121100FC45B6"
+            BuildableName = "ios.app"
+            BlueprintName = "ios"
+            ReferencedContainer = "container:ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
