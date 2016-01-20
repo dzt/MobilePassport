@@ -29,7 +29,7 @@ class RegisterViewController: UIViewController {
         let usernameString = "username=" + self.username.text!
         let passwordString = "&password=" + self.password.text!
         let emailString = "&email=" + self.email.text!
-        let nameString = "&string=" + self.name.text!
+        let nameString = "&name=" + self.name.text!
         let postData = NSMutableData(data: usernameString.dataUsingEncoding(NSUTF8StringEncoding)!)
         postData.appendData(passwordString.dataUsingEncoding(NSUTF8StringEncoding)!)
         postData.appendData(emailString.dataUsingEncoding(NSUTF8StringEncoding)!)
