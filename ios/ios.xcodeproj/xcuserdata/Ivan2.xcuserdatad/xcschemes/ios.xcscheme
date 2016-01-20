@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ED9B386B1C4F121100FC45B6"
+               BlueprintIdentifier = "ED9B38A11C501F4200FC45B6"
                BuildableName = "ios.app"
                BlueprintName = "ios"
                ReferencedContainer = "container:ios.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ED9B387F1C4F121100FC45B6"
+               BlueprintIdentifier = "ED9B38B51C501F4300FC45B6"
                BuildableName = "iosUITests.xctest"
                BlueprintName = "iosUITests"
                ReferencedContainer = "container:ios.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ED9B386B1C4F121100FC45B6"
+            BlueprintIdentifier = "ED9B38A11C501F4200FC45B6"
             BuildableName = "ios.app"
             BlueprintName = "ios"
             ReferencedContainer = "container:ios.xcodeproj">
@@ -65,7 +65,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ED9B386B1C4F121100FC45B6"
+            BlueprintIdentifier = "ED9B38A11C501F4200FC45B6"
             BuildableName = "ios.app"
             BlueprintName = "ios"
             ReferencedContainer = "container:ios.xcodeproj">
@@ -84,7 +84,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ED9B386B1C4F121100FC45B6"
+            BlueprintIdentifier = "ED9B38A11C501F4200FC45B6"
             BuildableName = "ios.app"
             BlueprintName = "ios"
             ReferencedContainer = "container:ios.xcodeproj">

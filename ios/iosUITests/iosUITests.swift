@@ -2,7 +2,7 @@
 //  iosUITests.swift
 //  iosUITests
 //
-//  Created by Ivan Chau on 1/19/16.
+//  Created by Ivan Chau on 1/20/16.
 //  Copyright © 2016 Ivan Chau & Peter Soboyejo. All rights reserved.
 //
 
