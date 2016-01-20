@@ -3,6 +3,12 @@ var express = require('express');
 
 module.exports = function(app, passport) {
 
+    app.get('/', function(req, res) {
+        res.writeHead(200, {"Content-Type": "application/json"});
+        res.end({"MobilePassport API v1"});
+
+    });
+
     // Login [x]
     app.post('/login', users.login);
 

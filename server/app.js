@@ -26,10 +26,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-app.get('/', function(req, res) {
-    res.end({ "msg": "It's real Nigga Hours." });
-});
-
 require('./config/passport')(passport);
 require('./routes')(app, passport);
 
