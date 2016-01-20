@@ -38,7 +38,7 @@ class RegisterViewController: UIViewController {
         let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/signup")!,
             cachePolicy: .UseProtocolCachePolicy,
             timeoutInterval: 10.0)
-        request.HTTPMethod = "PUT"
+        request.HTTPMethod = "POST"
         request.allHTTPHeaderFields = headers
         request.HTTPBody = postData
         
