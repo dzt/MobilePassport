@@ -14,6 +14,11 @@
 		ED9B38BB1C501F4300FC45B6 /* iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B38BA1C501F4300FC45B6 /* iosUITests.swift */; };
 		ED9B38C61C501FE700FC45B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B38C51C501FE700FC45B6 /* LoginViewController.swift */; };
 		ED9B38C81C50300A00FC45B6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B38C71C50300A00FC45B6 /* RegisterViewController.swift */; };
+		ED9B38CE1C5044D700FC45B6 /* prev.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9B38C91C5044D700FC45B6 /* prev.png */; };
+		ED9B38CF1C5044D700FC45B6 /* high.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9B38CA1C5044D700FC45B6 /* high.png */; };
+		ED9B38D01C5044D700FC45B6 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9B38CB1C5044D700FC45B6 /* icon.png */; };
+		ED9B38D11C5044D700FC45B6 /* icon.psd in Resources */ = {isa = PBXBuildFile; fileRef = ED9B38CC1C5044D700FC45B6 /* icon.psd */; };
+		ED9B38D21C5044D700FC45B6 /* noshadow.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9B38CD1C5044D700FC45B6 /* noshadow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +43,11 @@
 		ED9B38BC1C501F4300FC45B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED9B38C51C501FE700FC45B6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ED9B38C71C50300A00FC45B6 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		ED9B38C91C5044D700FC45B6 /* prev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prev.png; path = ../../art/prev.png; sourceTree = "<group>"; };
+		ED9B38CA1C5044D700FC45B6 /* high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = high.png; path = ../../art/high.png; sourceTree = "<group>"; };
+		ED9B38CB1C5044D700FC45B6 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../art/icon.png; sourceTree = "<group>"; };
+		ED9B38CC1C5044D700FC45B6 /* icon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = icon.psd; path = ../../art/icon.psd; sourceTree = "<group>"; };
+		ED9B38CD1C5044D700FC45B6 /* noshadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noshadow.png; path = ../../art/noshadow.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +95,7 @@
 				ED9B38A91C501F4300FC45B6 /* Main.storyboard */,
 				ED9B38AC1C501F4300FC45B6 /* Assets.xcassets */,
 				ED9B38AE1C501F4300FC45B6 /* LaunchScreen.storyboard */,
+				ED9B38D31C5044E900FC45B6 /* art */,
 				ED9B38B11C501F4300FC45B6 /* Info.plist */,
 			);
 			path = ios;
@@ -97,6 +108,18 @@
 				ED9B38BC1C501F4300FC45B6 /* Info.plist */,
 			);
 			path = iosUITests;
+			sourceTree = "<group>";
+		};
+		ED9B38D31C5044E900FC45B6 /* art */ = {
+			isa = PBXGroup;
+			children = (
+				ED9B38C91C5044D700FC45B6 /* prev.png */,
+				ED9B38CA1C5044D700FC45B6 /* high.png */,
+				ED9B38CB1C5044D700FC45B6 /* icon.png */,
+				ED9B38CC1C5044D700FC45B6 /* icon.psd */,
+				ED9B38CD1C5044D700FC45B6 /* noshadow.png */,
+			);
+			name = art;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,9 +203,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED9B38CE1C5044D700FC45B6 /* prev.png in Resources */,
+				ED9B38CF1C5044D700FC45B6 /* high.png in Resources */,
+				ED9B38D21C5044D700FC45B6 /* noshadow.png in Resources */,
+				ED9B38D01C5044D700FC45B6 /* icon.png in Resources */,
 				ED9B38B01C501F4300FC45B6 /* LaunchScreen.storyboard in Resources */,
 				ED9B38AD1C501F4300FC45B6 /* Assets.xcassets in Resources */,
 				ED9B38AB1C501F4300FC45B6 /* Main.storyboard in Resources */,
+				ED9B38D11C5044D700FC45B6 /* icon.psd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
