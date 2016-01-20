@@ -9,6 +9,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.petersoboyejo.mobilepassport.R;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+import fr.tkeunebr.gravatar.Gravatar;
 
 public class SearchActivity extends AppCompatActivity {
 
@@ -39,6 +43,15 @@ public class SearchActivity extends AppCompatActivity {
         String usernmae_search = intent.getExtras().getString("usernmae_search");
 
         setTitle(usernmae_search);
+
+        CircleImageView mCircleImageView = (CircleImageView) findViewById(R.id.profile_image_search);
+        String gravatarUrl = Gravatar.init().with(email_search).build();
+
+        Picasso.with(this)
+                .load(gravatarUrl)
+                .resize(500, 500)
+                .centerCrop()
+                .into(mCircleImageView);
 
         nameTV.setText(name_search);
         emailTV.setText(email_search);

@@ -9,6 +9,7 @@
     <string name="server_response">SERVER_RESPONSE</string>
     <string name="server_message">SERVER_MESSAGE</string>
 
+    <string name="sharedPreferences">com.petersoboyejo.mobilepassport</string>
 
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>

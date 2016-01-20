@@ -24,6 +24,7 @@ android {
         compile 'com.android.support:support-v4:+'
         compile 'com.android.support:design:23.0.1'
         compile 'de.hdodenhof:circleimageview:2.0.0'
+        compile 'com.squareup.picasso:picasso:2.5.2'
         compile 'com.loopj.android:android-async-http:1.4.9'
         compile group: 'org.apache.httpcomponents' , name: 'httpclient-android' , version: '4.3.5.1'
 

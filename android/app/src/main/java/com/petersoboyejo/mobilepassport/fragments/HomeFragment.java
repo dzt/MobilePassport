@@ -17,11 +17,14 @@ import com.petersoboyejo.mobilepassport.R;
 import com.petersoboyejo.mobilepassport.activities.SearchActivity;
 import com.petersoboyejo.mobilepassport.http.AsyncClient;
 import com.petersoboyejo.mobilepassport.http.mJsonHttpResponseHandler;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import cz.msebera.android.httpclient.Header;
+import de.hdodenhof.circleimageview.CircleImageView;
+import fr.tkeunebr.gravatar.Gravatar;
 
 
 public class HomeFragment extends Fragment {
@@ -43,8 +46,6 @@ public class HomeFragment extends Fragment {
 
         LayoutInflater dViewinflater = getActivity().getLayoutInflater();
         final View dView = dViewinflater.inflate(R.layout.dialoglayout, null);
-
-
 
         FloatingActionButton orderButton = (FloatingActionButton) rootView.findViewById(R.id.search);
         orderButton.setOnClickListener(new View.OnClickListener() {
@@ -106,8 +107,7 @@ public class HomeFragment extends Fragment {
                             }
                         }).show();
 
-                // Intent intent = new Intent(getContext(), SearchActivity.class);
-                // startActivity(intent);
+
 
             }
 
@@ -127,6 +127,15 @@ public class HomeFragment extends Fragment {
                         name = response.getString("name");
                         email = response.getString("email");
                         usernmae = "@" + response.getString("username");
+
+                        CircleImageView mCircleImageView = (CircleImageView) rootView.findViewById(R.id.profile_image_search);
+                        String gravatarUrl = Gravatar.init().with(email).build();
+
+                        Picasso.with(getContext())
+                                .load(gravatarUrl)
+                                .resize(500, 500)
+                                .centerCrop()
+                                .into(mCircleImageView);
 
                         nameTV.setText(name);
                         emailTV.setText(email);
