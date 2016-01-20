@@ -13,6 +13,7 @@
 		ED9B38B01C501F4300FC45B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED9B38AE1C501F4300FC45B6 /* LaunchScreen.storyboard */; };
 		ED9B38BB1C501F4300FC45B6 /* iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B38BA1C501F4300FC45B6 /* iosUITests.swift */; };
 		ED9B38C61C501FE700FC45B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B38C51C501FE700FC45B6 /* LoginViewController.swift */; };
+		ED9B38C81C50300A00FC45B6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B38C71C50300A00FC45B6 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		ED9B38BA1C501F4300FC45B6 /* iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosUITests.swift; sourceTree = "<group>"; };
 		ED9B38BC1C501F4300FC45B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED9B38C51C501FE700FC45B6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ED9B38C71C50300A00FC45B6 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				ED9B38A51C501F4300FC45B6 /* AppDelegate.swift */,
 				ED9B38C51C501FE700FC45B6 /* LoginViewController.swift */,
+				ED9B38C71C50300A00FC45B6 /* RegisterViewController.swift */,
 				ED9B38A91C501F4300FC45B6 /* Main.storyboard */,
 				ED9B38AC1C501F4300FC45B6 /* Assets.xcassets */,
 				ED9B38AE1C501F4300FC45B6 /* LaunchScreen.storyboard */,
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED9B38C81C50300A00FC45B6 /* RegisterViewController.swift in Sources */,
 				ED9B38C61C501FE700FC45B6 /* LoginViewController.swift in Sources */,
 				ED9B38A61C501F4300FC45B6 /* AppDelegate.swift in Sources */,
 			);
