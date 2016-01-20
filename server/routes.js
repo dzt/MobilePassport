@@ -21,13 +21,10 @@ module.exports = function(app, passport) {
     // Update As Currently Logged In User [x]
     app.post('/user/update', isLoggedIn, users.update);
 
-    // Update Your Profile Pircture when logged in [x]
-    // app.post('/user/update/profileImage', isLoggedIn, users.profileImg);
-
     // Delete Currently Logged in User [x]
     app.delete('/user/delete', isLoggedIn, users.delete);
 
-    // Log Out As Current User [x]
+    //   [x]
     app.post('/logout', function(req, res) {
         req.logout();
         res.end('Logged out')
