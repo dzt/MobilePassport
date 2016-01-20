@@ -12,7 +12,7 @@ Check out the <a href="https://www.youtube.com/watch?v=C4ik82C5G8g">video demo</
 | URL | Method | Description | Parameters |
 |:-------------------------------:|:------:|:---------------------------------------:|:-----------------------------------:|
 | /login | POST | Login as existing user, | username & password |
-| /signup | PUT | Register as a new user. | name, username, password, and email |
+| /signup | POST | Register as a new user. | name, username, password, and email |
 | /user/search/id/:id | GET | Search For User by ID |  |
 | /user/search/username/:username | GET | Search For User by Username |  |
 | /user/profile | GET | My Profile for Currently Logged in User |  |
