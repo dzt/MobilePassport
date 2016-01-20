@@ -7,7 +7,7 @@ module.exports = function(app, passport) {
     app.post('/login', users.login);
 
     // Register [x]
-    app.put('/signup', users.create); 
+    app.post('/signup', users.create); 
 
     // Search For User by ID [x]
     app.get('/user/search/id/:id', users.read);
@@ -24,7 +24,7 @@ module.exports = function(app, passport) {
     // Delete Currently Logged in User [x]
     app.delete('/user/delete', isLoggedIn, users.delete);
 
-    //   [x]
+    // [x]
     app.post('/logout', function(req, res) {
         req.logout();
         res.end('Logged out')

@@ -110,6 +110,7 @@ public class SettingsFragment extends Fragment {
 
         });
 
+        
 
 
         delAccount = (Button) rootView.findViewById(R.id.delAccount);
