@@ -16,7 +16,20 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="high.png" translatesAutoresizingMaskIntoConstraints="NO" id="KXx-6O-lOZ">
+                                <rect key="frame" x="183" y="183" width="234" height="234"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="234" id="jfK-Nk-Toy"/>
+                                    <constraint firstAttribute="width" constant="234" id="lvZ-em-Fcr"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.27450980390000002" green="0.63921568630000003" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="KXx-6O-lOZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aBj-z1-oit"/>
+                            <constraint firstItem="KXx-6O-lOZ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="qPP-hk-16L"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +37,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="high.png" width="512" height="512"/>
+    </resources>
 </document>
