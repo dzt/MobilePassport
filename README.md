@@ -20,6 +20,8 @@ Check out the <a href="https://www.youtube.com/watch?v=C4ik82C5G8g">video demo</
 | /user/delete | DELETE | Delete Currently Logged in User |  |
 | /logout | POST | Log Out As Current User |  |
 
+Profile Pictures are all saved on <a href="http://gravatar.com/">gravatar</a>
+
 **Note: In order to run the Node.js server you must create a file under the name of `.env` and make sure to add your MongoDB URI.**
 
 ```
