@@ -13,7 +13,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var password : UITextField!
     @IBOutlet weak var login : UIButton!
     @IBOutlet weak var register : UIButton!
+    @IBOutlet weak var logo : UIImageView!
+
     
+    var loggedIn = false;
+    var userData = NSDictionary()
     @IBAction func login(sender:UIButton){
         if (self.username.text == "" || self.password.text == ""){
             let alertView = UIAlertController(title: "UWOTM8", message: "Fam, what you tryna pull?", preferredStyle: .Alert)
@@ -53,6 +57,13 @@ class LoginViewController: UIViewController {
                 if (httpResponse?.statusCode == 200){
                     dispatch_async(dispatch_get_main_queue(), {
                         //segue to main view.
+                        if (self.loggedIn == false){
+                            self.performSegueWithIdentifier("LoginSegue", sender: self)
+                            // use anyObj here
+                            self.loggedIn = true;
+                        }else{
+                            
+                        }
                     })
                 }else{
                     print("error")
@@ -68,7 +79,10 @@ class LoginViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.loggedIn = false;
+        logo.layer.masksToBounds = false
+        logo.layer.cornerRadius = logo.frame.height/2
+        logo.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
     
@@ -78,7 +92,7 @@ class LoginViewController: UIViewController {
     }
     
     
-    /*
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -86,6 +100,6 @@ class LoginViewController: UIViewController {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
     }
-    */
+    
     
 }

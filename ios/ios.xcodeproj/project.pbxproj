@@ -19,6 +19,21 @@
 		ED9B38D01C5044D700FC45B6 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9B38CB1C5044D700FC45B6 /* icon.png */; };
 		ED9B38D11C5044D700FC45B6 /* icon.psd in Resources */ = {isa = PBXBuildFile; fileRef = ED9B38CC1C5044D700FC45B6 /* icon.psd */; };
 		ED9B38D21C5044D700FC45B6 /* noshadow.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9B38CD1C5044D700FC45B6 /* noshadow.png */; };
+		ED9B38D51C50482400FC45B6 /* 512.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9B38D41C50482400FC45B6 /* 512.png */; };
+		ED9B38DB1C5059E700FC45B6 /* rsz_4high.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9B38D61C5059E700FC45B6 /* rsz_4high.png */; };
+		ED9B38DC1C5059E700FC45B6 /* rsz_3high.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9B38D71C5059E700FC45B6 /* rsz_3high.png */; };
+		ED9B38DD1C5059E700FC45B6 /* rsz_2high.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9B38D81C5059E700FC45B6 /* rsz_2high.png */; };
+		ED9B38DE1C5059E700FC45B6 /* rsz_1high.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9B38D91C5059E700FC45B6 /* rsz_1high.png */; };
+		ED9B38DF1C5059E700FC45B6 /* rsz_high.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9B38DA1C5059E700FC45B6 /* rsz_high.png */; };
+		ED9B38E11C5185A700FC45B6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B38E01C5185A700FC45B6 /* MainViewController.swift */; };
+		ED9B38EA1C518C5B00FC45B6 /* Diskcached.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B38E31C518C5B00FC45B6 /* Diskcached.swift */; };
+		ED9B38EB1C518C5B00FC45B6 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B38E51C518C5B00FC45B6 /* ImageLoader.swift */; };
+		ED9B38EC1C518C5B00FC45B6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED9B38E61C518C5B00FC45B6 /* Info.plist */; };
+		ED9B38ED1C518C5B00FC45B6 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B38E71C518C5B00FC45B6 /* Manager.swift */; };
+		ED9B38EE1C518C5B00FC45B6 /* UIImage+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B38E81C518C5B00FC45B6 /* UIImage+ImageLoader.swift */; };
+		ED9B38EF1C518C5B00FC45B6 /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B38E91C518C5B00FC45B6 /* UIImageView+ImageLoader.swift */; };
+		ED9B38F81C51B04300FC45B6 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B38F71C51B04300FC45B6 /* TabBar.swift */; };
+		ED9B38FC1C51D92100FC45B6 /* rsz_placeholder-user-photo.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9B38FB1C51D92100FC45B6 /* rsz_placeholder-user-photo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +63,23 @@
 		ED9B38CB1C5044D700FC45B6 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../art/icon.png; sourceTree = "<group>"; };
 		ED9B38CC1C5044D700FC45B6 /* icon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = icon.psd; path = ../../art/icon.psd; sourceTree = "<group>"; };
 		ED9B38CD1C5044D700FC45B6 /* noshadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noshadow.png; path = ../../art/noshadow.png; sourceTree = "<group>"; };
+		ED9B38D41C50482400FC45B6 /* 512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 512.png; path = ../../art/512.png; sourceTree = "<group>"; };
+		ED9B38D61C5059E700FC45B6 /* rsz_4high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rsz_4high.png; path = ../../../../Downloads/rsz_4high.png; sourceTree = "<group>"; };
+		ED9B38D71C5059E700FC45B6 /* rsz_3high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rsz_3high.png; path = ../../../../Downloads/rsz_3high.png; sourceTree = "<group>"; };
+		ED9B38D81C5059E700FC45B6 /* rsz_2high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rsz_2high.png; path = ../../../../Downloads/rsz_2high.png; sourceTree = "<group>"; };
+		ED9B38D91C5059E700FC45B6 /* rsz_1high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rsz_1high.png; path = ../../../../Downloads/rsz_1high.png; sourceTree = "<group>"; };
+		ED9B38DA1C5059E700FC45B6 /* rsz_high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rsz_high.png; path = ../../../../Downloads/rsz_high.png; sourceTree = "<group>"; };
+		ED9B38E01C5185A700FC45B6 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		ED9B38E31C518C5B00FC45B6 /* Diskcached.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diskcached.swift; sourceTree = "<group>"; };
+		ED9B38E41C518C5B00FC45B6 /* ImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLoader.h; sourceTree = "<group>"; };
+		ED9B38E51C518C5B00FC45B6 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		ED9B38E61C518C5B00FC45B6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED9B38E71C518C5B00FC45B6 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		ED9B38E81C518C5B00FC45B6 /* UIImage+ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageLoader.swift"; sourceTree = "<group>"; };
+		ED9B38E91C518C5B00FC45B6 /* UIImageView+ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageLoader.swift"; sourceTree = "<group>"; };
+		ED9B38F01C518EF000FC45B6 /* ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios-Bridging-Header.h"; sourceTree = "<group>"; };
+		ED9B38F71C51B04300FC45B6 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		ED9B38FB1C51D92100FC45B6 /* rsz_placeholder-user-photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rsz_placeholder-user-photo.png"; path = "../rsz_placeholder-user-photo.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,11 +124,15 @@
 				ED9B38A51C501F4300FC45B6 /* AppDelegate.swift */,
 				ED9B38C51C501FE700FC45B6 /* LoginViewController.swift */,
 				ED9B38C71C50300A00FC45B6 /* RegisterViewController.swift */,
+				ED9B38E01C5185A700FC45B6 /* MainViewController.swift */,
+				ED9B38F71C51B04300FC45B6 /* TabBar.swift */,
 				ED9B38A91C501F4300FC45B6 /* Main.storyboard */,
 				ED9B38AC1C501F4300FC45B6 /* Assets.xcassets */,
 				ED9B38AE1C501F4300FC45B6 /* LaunchScreen.storyboard */,
+				ED9B38E21C518C5B00FC45B6 /* ImageLoader */,
 				ED9B38D31C5044E900FC45B6 /* art */,
 				ED9B38B11C501F4300FC45B6 /* Info.plist */,
+				ED9B38F01C518EF000FC45B6 /* ios-Bridging-Header.h */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -113,13 +149,34 @@
 		ED9B38D31C5044E900FC45B6 /* art */ = {
 			isa = PBXGroup;
 			children = (
+				ED9B38FB1C51D92100FC45B6 /* rsz_placeholder-user-photo.png */,
+				ED9B38D61C5059E700FC45B6 /* rsz_4high.png */,
+				ED9B38D71C5059E700FC45B6 /* rsz_3high.png */,
+				ED9B38D81C5059E700FC45B6 /* rsz_2high.png */,
+				ED9B38D91C5059E700FC45B6 /* rsz_1high.png */,
+				ED9B38DA1C5059E700FC45B6 /* rsz_high.png */,
 				ED9B38C91C5044D700FC45B6 /* prev.png */,
+				ED9B38D41C50482400FC45B6 /* 512.png */,
 				ED9B38CA1C5044D700FC45B6 /* high.png */,
 				ED9B38CB1C5044D700FC45B6 /* icon.png */,
 				ED9B38CC1C5044D700FC45B6 /* icon.psd */,
 				ED9B38CD1C5044D700FC45B6 /* noshadow.png */,
 			);
 			name = art;
+			sourceTree = "<group>";
+		};
+		ED9B38E21C518C5B00FC45B6 /* ImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				ED9B38E31C518C5B00FC45B6 /* Diskcached.swift */,
+				ED9B38E41C518C5B00FC45B6 /* ImageLoader.h */,
+				ED9B38E51C518C5B00FC45B6 /* ImageLoader.swift */,
+				ED9B38E61C518C5B00FC45B6 /* Info.plist */,
+				ED9B38E71C518C5B00FC45B6 /* Manager.swift */,
+				ED9B38E81C518C5B00FC45B6 /* UIImage+ImageLoader.swift */,
+				ED9B38E91C518C5B00FC45B6 /* UIImageView+ImageLoader.swift */,
+			);
+			path = ImageLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,13 +260,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED9B38DD1C5059E700FC45B6 /* rsz_2high.png in Resources */,
 				ED9B38CE1C5044D700FC45B6 /* prev.png in Resources */,
 				ED9B38CF1C5044D700FC45B6 /* high.png in Resources */,
+				ED9B38DF1C5059E700FC45B6 /* rsz_high.png in Resources */,
 				ED9B38D21C5044D700FC45B6 /* noshadow.png in Resources */,
+				ED9B38FC1C51D92100FC45B6 /* rsz_placeholder-user-photo.png in Resources */,
 				ED9B38D01C5044D700FC45B6 /* icon.png in Resources */,
 				ED9B38B01C501F4300FC45B6 /* LaunchScreen.storyboard in Resources */,
 				ED9B38AD1C501F4300FC45B6 /* Assets.xcassets in Resources */,
+				ED9B38EC1C518C5B00FC45B6 /* Info.plist in Resources */,
+				ED9B38DE1C5059E700FC45B6 /* rsz_1high.png in Resources */,
+				ED9B38D51C50482400FC45B6 /* 512.png in Resources */,
 				ED9B38AB1C501F4300FC45B6 /* Main.storyboard in Resources */,
+				ED9B38DC1C5059E700FC45B6 /* rsz_3high.png in Resources */,
+				ED9B38DB1C5059E700FC45B6 /* rsz_4high.png in Resources */,
 				ED9B38D11C5044D700FC45B6 /* icon.psd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,9 +293,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED9B38EA1C518C5B00FC45B6 /* Diskcached.swift in Sources */,
 				ED9B38C81C50300A00FC45B6 /* RegisterViewController.swift in Sources */,
+				ED9B38EE1C518C5B00FC45B6 /* UIImage+ImageLoader.swift in Sources */,
+				ED9B38EB1C518C5B00FC45B6 /* ImageLoader.swift in Sources */,
 				ED9B38C61C501FE700FC45B6 /* LoginViewController.swift in Sources */,
+				ED9B38EF1C518C5B00FC45B6 /* UIImageView+ImageLoader.swift in Sources */,
+				ED9B38ED1C518C5B00FC45B6 /* Manager.swift in Sources */,
 				ED9B38A61C501F4300FC45B6 /* AppDelegate.swift in Sources */,
+				ED9B38E11C5185A700FC45B6 /* MainViewController.swift in Sources */,
+				ED9B38F81C51B04300FC45B6 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,10 +429,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ichauster-crxdit.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ios/ios-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -368,10 +443,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ichauster-crxdit.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ios/ios-Bridging-Header.h";
 			};
 			name = Release;
 		};
