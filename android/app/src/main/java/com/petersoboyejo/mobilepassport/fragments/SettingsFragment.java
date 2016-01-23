@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.loopj.android.http.RequestParams;
@@ -42,16 +43,18 @@ public class SettingsFragment extends Fragment {
         final EditText usernameET = (EditText) rootView.findViewById(R.id.userSearch);
         final EditText emailET = (EditText) rootView.findViewById(R.id.editText3);
         final EditText passwordET = (EditText) rootView.findViewById(R.id.editText5);
+        final ProgressBar load = (ProgressBar) rootView.findViewById(R.id.load_profile);
         final String pswdString = passwordET.getText().toString();
-
 
 
         AsyncClient.get("/user/profile", null, new mJsonHttpResponseHandler(getContext()) {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+
+                load.setVisibility(View.GONE);
+
                 if (response != null) {
                     try {
-
                         name = response.getString("name");
                         email = response.getString("email");
                         usernmae = response.getString("username");
@@ -70,6 +73,7 @@ public class SettingsFragment extends Fragment {
 
                 }
             }
+
         });
 
 
@@ -110,7 +114,7 @@ public class SettingsFragment extends Fragment {
 
         });
 
-        
+
 
 
         delAccount = (Button) rootView.findViewById(R.id.delAccount);
