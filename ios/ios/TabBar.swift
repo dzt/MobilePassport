@@ -13,8 +13,9 @@ class TabBar: UITabBarController {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true;
         self.navigationItem.title = "MobilePassport"
-               
         // Do any additional setup after loading the view.
+        
+
     }
 
     override func didReceiveMemoryWarning() {

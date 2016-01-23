@@ -34,6 +34,11 @@
 		ED9B38EF1C518C5B00FC45B6 /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B38E91C518C5B00FC45B6 /* UIImageView+ImageLoader.swift */; };
 		ED9B38F81C51B04300FC45B6 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B38F71C51B04300FC45B6 /* TabBar.swift */; };
 		ED9B38FC1C51D92100FC45B6 /* rsz_placeholder-user-photo.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9B38FB1C51D92100FC45B6 /* rsz_placeholder-user-photo.png */; };
+		ED9B39001C52E5E500FC45B6 /* 145119083668802.gif in Resources */ = {isa = PBXBuildFile; fileRef = ED9B38FF1C52E5E500FC45B6 /* 145119083668802.gif */; };
+		ED9B39021C52EA1400FC45B6 /* blah.gif in Resources */ = {isa = PBXBuildFile; fileRef = ED9B39011C52EA1400FC45B6 /* blah.gif */; };
+		ED9B39041C52EB8B00FC45B6 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B39031C52EB8B00FC45B6 /* Keychain.swift */; };
+		ED9B39061C52F3A900FC45B6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B39051C52F3A900FC45B6 /* SearchViewController.swift */; };
+		ED9B39091C53229C00FC45B6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B39081C53229C00FC45B6 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +85,11 @@
 		ED9B38F01C518EF000FC45B6 /* ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios-Bridging-Header.h"; sourceTree = "<group>"; };
 		ED9B38F71C51B04300FC45B6 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		ED9B38FB1C51D92100FC45B6 /* rsz_placeholder-user-photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rsz_placeholder-user-photo.png"; path = "../rsz_placeholder-user-photo.png"; sourceTree = "<group>"; };
+		ED9B38FF1C52E5E500FC45B6 /* 145119083668802.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = 145119083668802.gif; path = ../145119083668802.gif; sourceTree = "<group>"; };
+		ED9B39011C52EA1400FC45B6 /* blah.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = blah.gif; sourceTree = "<group>"; };
+		ED9B39031C52EB8B00FC45B6 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		ED9B39051C52F3A900FC45B6 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		ED9B39081C53229C00FC45B6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,8 +134,8 @@
 				ED9B38A51C501F4300FC45B6 /* AppDelegate.swift */,
 				ED9B38C51C501FE700FC45B6 /* LoginViewController.swift */,
 				ED9B38C71C50300A00FC45B6 /* RegisterViewController.swift */,
-				ED9B38E01C5185A700FC45B6 /* MainViewController.swift */,
-				ED9B38F71C51B04300FC45B6 /* TabBar.swift */,
+				ED9B39071C52F3C800FC45B6 /* Tabbed */,
+				ED9B39031C52EB8B00FC45B6 /* Keychain.swift */,
 				ED9B38A91C501F4300FC45B6 /* Main.storyboard */,
 				ED9B38AC1C501F4300FC45B6 /* Assets.xcassets */,
 				ED9B38AE1C501F4300FC45B6 /* LaunchScreen.storyboard */,
@@ -149,6 +159,8 @@
 		ED9B38D31C5044E900FC45B6 /* art */ = {
 			isa = PBXGroup;
 			children = (
+				ED9B38FF1C52E5E500FC45B6 /* 145119083668802.gif */,
+				ED9B39011C52EA1400FC45B6 /* blah.gif */,
 				ED9B38FB1C51D92100FC45B6 /* rsz_placeholder-user-photo.png */,
 				ED9B38D61C5059E700FC45B6 /* rsz_4high.png */,
 				ED9B38D71C5059E700FC45B6 /* rsz_3high.png */,
@@ -177,6 +189,17 @@
 				ED9B38E91C518C5B00FC45B6 /* UIImageView+ImageLoader.swift */,
 			);
 			path = ImageLoader;
+			sourceTree = "<group>";
+		};
+		ED9B39071C52F3C800FC45B6 /* Tabbed */ = {
+			isa = PBXGroup;
+			children = (
+				ED9B38F71C51B04300FC45B6 /* TabBar.swift */,
+				ED9B38E01C5185A700FC45B6 /* MainViewController.swift */,
+				ED9B39051C52F3A900FC45B6 /* SearchViewController.swift */,
+				ED9B39081C53229C00FC45B6 /* ProfileViewController.swift */,
+			);
+			name = Tabbed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,7 +288,9 @@
 				ED9B38CF1C5044D700FC45B6 /* high.png in Resources */,
 				ED9B38DF1C5059E700FC45B6 /* rsz_high.png in Resources */,
 				ED9B38D21C5044D700FC45B6 /* noshadow.png in Resources */,
+				ED9B39001C52E5E500FC45B6 /* 145119083668802.gif in Resources */,
 				ED9B38FC1C51D92100FC45B6 /* rsz_placeholder-user-photo.png in Resources */,
+				ED9B39021C52EA1400FC45B6 /* blah.gif in Resources */,
 				ED9B38D01C5044D700FC45B6 /* icon.png in Resources */,
 				ED9B38B01C501F4300FC45B6 /* LaunchScreen.storyboard in Resources */,
 				ED9B38AD1C501F4300FC45B6 /* Assets.xcassets in Resources */,
@@ -298,9 +323,12 @@
 				ED9B38EE1C518C5B00FC45B6 /* UIImage+ImageLoader.swift in Sources */,
 				ED9B38EB1C518C5B00FC45B6 /* ImageLoader.swift in Sources */,
 				ED9B38C61C501FE700FC45B6 /* LoginViewController.swift in Sources */,
+				ED9B39041C52EB8B00FC45B6 /* Keychain.swift in Sources */,
+				ED9B39061C52F3A900FC45B6 /* SearchViewController.swift in Sources */,
 				ED9B38EF1C518C5B00FC45B6 /* UIImageView+ImageLoader.swift in Sources */,
 				ED9B38ED1C518C5B00FC45B6 /* Manager.swift in Sources */,
 				ED9B38A61C501F4300FC45B6 /* AppDelegate.swift in Sources */,
+				ED9B39091C53229C00FC45B6 /* ProfileViewController.swift in Sources */,
 				ED9B38E11C5185A700FC45B6 /* MainViewController.swift in Sources */,
 				ED9B38F81C51B04300FC45B6 /* TabBar.swift in Sources */,
 			);

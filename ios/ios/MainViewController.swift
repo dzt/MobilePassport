@@ -18,11 +18,15 @@ class MainViewController: UIViewController {
     var user = NSDictionary()
 
     override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "blah.gif")?.imageWithRenderingMode(.AlwaysOriginal), selectedImage: UIImage(named: "145119083668802.gif"))
+        self.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.blackColor()], forState: UIControlState.Normal)
+        self.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.whiteColor()], forState: UIControlState.Selected)
+
         self.navigationItem.hidesBackButton = true;
         image.layer.masksToBounds = false
         image.layer.cornerRadius = image.frame.height/2
         image.clipsToBounds = true
-        super.viewDidLoad()
         let headers = [
             "cache-control": "no-cache",
         ]
@@ -70,7 +74,7 @@ class MainViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
