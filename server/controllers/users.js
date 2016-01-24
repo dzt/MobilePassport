@@ -97,6 +97,7 @@ module.exports.update = function(req, res) {
                 return res.status(401).end('Modifying other user');
             } else {
                 user.name = req.body.name ? req.body.name : user.name;
+                user.desc = req.body.dec ? req.body.desc : user.desc;
                 user.username = req.body.username ? req.body.username : user.username;
                 user.password = req.body.password ? user.generateHash(req.body.password) : user.password;
                 user.email = req.body.email ? req.body.email : user.email;

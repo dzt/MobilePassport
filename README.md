@@ -16,7 +16,7 @@ Check out the <a href="https://www.youtube.com/watch?v=C4ik82C5G8g">video demo</
 | /user/search/id/:id | GET | Search For User by ID |  |
 | /user/search/username/:username | GET | Search For User by Username |  |
 | /user/profile | GET | My Profile for Currently Logged in User |  |
-| /user/update | POST | Update As Currently Logged In User | name, username, password, and email |
+| /user/update | POST | Update As Currently Logged In User | name, desc, username, password, and email |
 | /user/delete | DELETE | Delete Currently Logged in User |  |
 | /logout | POST | Log Out As Current User |  |
 
