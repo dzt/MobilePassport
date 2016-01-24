@@ -16,6 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        if (!NSUserDefaults.standardUserDefaults().boolForKey("HasLaunchedOnce")){
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "HasLaunchedOnce")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            let key = Keychain()
+            key.setPasscode("MPUsername", passcode: "");
+            key.setPasscode("MPPassword", passcode: "");
+            
+        }
         return true
     }
 

@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
 
     
     var loggedIn = false;
+    let keychain = Keychain()
     var userData = NSDictionary()
     @IBAction func login(sender:UIButton){
         if (self.username.text == "" || self.password.text == ""){
@@ -29,15 +30,30 @@ class LoginViewController: UIViewController {
         username.resignFirstResponder()
         password.resignFirstResponder()
         
+        self.loginRequestWithParams(self.username.text!, passwordString: self.password.text!)
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.loggedIn = false;
+        logo.layer.masksToBounds = false
+        logo.layer.cornerRadius = logo.frame.height/2
+        logo.clipsToBounds = true
+
+        if(self.keychain.getPasscode("MPPassword")! != "" && self.keychain.getPasscode("MPUsername")! != ""){
+            self.loginRequestWithParams(self.keychain.getPasscode("MPUsername") as! String, passwordString: self.keychain.getPasscode("MPPassword") as! String)
+        }
+        // Do any additional setup after loading the view.
+    }
+    func loginRequestWithParams(usernameString : String, passwordString : String){
         let headers = [
             "cache-control": "no-cache",
             "content-type": "application/x-www-form-urlencoded"
         ]
         
-        let usernameString = "username=" + self.username.text!
-        let passwordString = "&password=" + self.password.text!
-        let postData = NSMutableData(data: usernameString.dataUsingEncoding(NSUTF8StringEncoding)!)
-        postData.appendData(passwordString.dataUsingEncoding(NSUTF8StringEncoding)!)
+        let usernameStr = "username=" + usernameString
+        let passwordStr = "&password=" + passwordString
+        let postData = NSMutableData(data: usernameStr.dataUsingEncoding(NSUTF8StringEncoding)!)
+        postData.appendData(passwordStr.dataUsingEncoding(NSUTF8StringEncoding)!)
         
         let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/login")!,
             cachePolicy: .UseProtocolCachePolicy,
@@ -57,6 +73,10 @@ class LoginViewController: UIViewController {
                 if (httpResponse?.statusCode == 200){
                     dispatch_async(dispatch_get_main_queue(), {
                         //segue to main view.
+                        if(self.keychain.getPasscode("MPPassword") == "" || self.keychain.getPasscode("MPUsername") == ""){
+                            self.keychain.setPasscode("MPPassword", passcode: passwordString)
+                            self.keychain.setPasscode("MPUsername", passcode: usernameString)
+                        }
                         if (self.loggedIn == false){
                             self.performSegueWithIdentifier("LoginSegue", sender: self)
                             // use anyObj here
@@ -75,17 +95,7 @@ class LoginViewController: UIViewController {
         
         dataTask.resume()
         
-        
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.loggedIn = false;
-        logo.layer.masksToBounds = false
-        logo.layer.cornerRadius = logo.frame.height/2
-        logo.clipsToBounds = true
-        // Do any additional setup after loading the view.
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

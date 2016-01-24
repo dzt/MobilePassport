@@ -1,38 +1,47 @@
 //
-//  MainViewController.swift
+//  SearchViewController.swift
 //  ios
 //
-//  Created by Ivan Chau on 1/21/16.
+//  Created by Ivan Chau on 1/22/16.
 //  Copyright © 2016 Ivan Chau & Peter Soboyejo. All rights reserved.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
-    @IBOutlet weak var image : UIImageView!
-    @IBOutlet weak var name : UILabel!
-    @IBOutlet weak var username : UILabel!
-    @IBOutlet weak var email : UILabel!
-    @IBOutlet weak var profile : UITabBarItem!
-
-    var user = NSDictionary()
-
+class SearchViewController: UIViewController, UISearchBarDelegate {
+    @IBOutlet weak var search : UISearchBar!
+    @IBOutlet weak var find : UILabel!
+    let indicator = UIActivityIndicatorView()
+    var query = NSDictionary()
+    var base = UILabel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "blah.gif")?.imageWithRenderingMode(.AlwaysOriginal), selectedImage: UIImage(named: "145119083668802.gif"))
+        self.base = self.find
+        self.search.delegate = self
         self.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.blackColor()], forState: UIControlState.Normal)
         self.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.whiteColor()], forState: UIControlState.Selected)
 
-        self.navigationItem.hidesBackButton = true;
-        image.layer.masksToBounds = false
-        image.layer.cornerRadius = image.frame.height/2
-        image.clipsToBounds = true
+        // Do any additional setup after loading the view.
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        indicator.center = self.view.center
+        indicator.startAnimating()
+        indicator.color = UIColor.darkGrayColor()
+        self.view.addSubview(indicator)
+    }
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        self.find.removeFromSuperview()
+    }
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        self.indicator.removeFromSuperview()
+        self.find = self.base
+        self.view.addSubview(self.find)
         let headers = [
             "cache-control": "no-cache",
         ]
-        
-        
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/user/profile")!,
+        let strins = "http://localhost:3000/user/search/username/" + self.search.text!
+        let request = NSMutableURLRequest(URL: NSURL(string: strins)!,
             cachePolicy: .UseProtocolCachePolicy,
             timeoutInterval: 10.0)
         request.HTTPMethod = "GET"
@@ -48,14 +57,11 @@ class MainViewController: UIViewController {
                 
                 if (httpResponse?.statusCode == 200){
                     dispatch_async(dispatch_get_main_queue(), {
+                        //segue to main view, etc.
                         do {
                             let json = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
-                            self.user = json
-                            self.email.text = self.user.objectForKey("email") as? String
-                            self.username.text = self.user.objectForKey("username") as? String
-                            self.name.text = self.user.objectForKey("name") as? String
-                            let hash = self.user.objectForKey("email") as? String
-                            self.getProfileImage(self.md5(string: (hash?.lowercaseString)!))
+                            self.query = json;
+                            self.performSegueWithIdentifier("ProfileSearch", sender: self)
                             // use anyObj here
                         } catch {
                             print("json error: \(error)")
@@ -72,40 +78,30 @@ class MainViewController: UIViewController {
         dataTask.resume()
         
 
-        // Do any additional setup after loading the view.
     }
-  
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        self.search.resignFirstResponder()
+        self.indicator.removeFromSuperview()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func getProfileImage(string:String){
-        let gravatarURL = "http://www.gravatar.com/avatar/" + string + "?s=480"
-        let gravns = NSURL(string: gravatarURL)
-        self.image.load(gravns!)
-    }
-    func md5(string string: String) -> String {
-        var digest = [UInt8](count: Int(CC_MD5_DIGEST_LENGTH), repeatedValue: 0)
-        if let data = string.dataUsingEncoding(NSUTF8StringEncoding) {
-            CC_MD5(data.bytes, CC_LONG(data.length), &digest)
-        }
-        
-        var digestHex = ""
-        for index in 0..<Int(CC_MD5_DIGEST_LENGTH) {
-            digestHex += String(format: "%02x", digest[index])
-        }
-        
-        return digestHex
-    }
+    
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if(segue.identifier == "ProfileSearch"){
+            let profileController = segue.destinationViewController as! ProfileViewController
+            profileController.real = NSMutableArray(array: [self.query.objectForKey("name")!,self.query.objectForKey("username")!,self.query.objectForKey("email")!])
+
+        }
     }
-    */
+    
 
 }
