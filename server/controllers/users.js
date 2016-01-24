@@ -34,10 +34,12 @@ module.exports.login = function(req, res, next) {
             if (err)
                 return next(err);
             if (!user)
+                res.writeHead(400, {"Content-Type": "application/json"});
                 return res.json({ SERVER_RESPONSE: 0, SERVER_MESSAGE: "Wrong credentials" });
             req.logIn(user, function(err) {
                 if (err)
                     return next(err);
+                res.writeHead(200, {"Content-Type": "application/json"});
                 return res.json({ SERVER_RESPONSE: 1, SERVER_MESSAGE: "Logged in!" });
             });
         })(req, res, next);
