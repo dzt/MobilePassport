@@ -39,6 +39,8 @@
 		ED9B390D1C532F9A00FC45B6 /* blah.gif in Resources */ = {isa = PBXBuildFile; fileRef = ED9B390A1C532F9A00FC45B6 /* blah.gif */; };
 		ED9B390E1C532F9A00FC45B6 /* 145119083668802.gif in Resources */ = {isa = PBXBuildFile; fileRef = ED9B390B1C532F9A00FC45B6 /* 145119083668802.gif */; };
 		ED9B390F1C532F9A00FC45B6 /* rsz_placeholder-user-photo.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9B390C1C532F9A00FC45B6 /* rsz_placeholder-user-photo.png */; };
+		ED9B39111C544B2900FC45B6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B39101C544B2900FC45B6 /* SettingsViewController.swift */; };
+		ED9B39131C54552100FC45B6 /* rsz_ic_settings_48px-128.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9B39121C54552100FC45B6 /* rsz_ic_settings_48px-128.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		ED9B390A1C532F9A00FC45B6 /* blah.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = blah.gif; path = art/blah.gif; sourceTree = "<group>"; };
 		ED9B390B1C532F9A00FC45B6 /* 145119083668802.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = 145119083668802.gif; path = art/145119083668802.gif; sourceTree = "<group>"; };
 		ED9B390C1C532F9A00FC45B6 /* rsz_placeholder-user-photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rsz_placeholder-user-photo.png"; path = "art/rsz_placeholder-user-photo.png"; sourceTree = "<group>"; };
+		ED9B39101C544B2900FC45B6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		ED9B39121C54552100FC45B6 /* rsz_ic_settings_48px-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rsz_ic_settings_48px-128.png"; path = "art/rsz_ic_settings_48px-128.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 		ED9B38D31C5044E900FC45B6 /* art */ = {
 			isa = PBXGroup;
 			children = (
+				ED9B39121C54552100FC45B6 /* rsz_ic_settings_48px-128.png */,
 				ED9B390A1C532F9A00FC45B6 /* blah.gif */,
 				ED9B390B1C532F9A00FC45B6 /* 145119083668802.gif */,
 				ED9B390C1C532F9A00FC45B6 /* rsz_placeholder-user-photo.png */,
@@ -198,6 +203,7 @@
 				ED9B38E01C5185A700FC45B6 /* MainViewController.swift */,
 				ED9B39051C52F3A900FC45B6 /* SearchViewController.swift */,
 				ED9B39081C53229C00FC45B6 /* ProfileViewController.swift */,
+				ED9B39101C544B2900FC45B6 /* SettingsViewController.swift */,
 			);
 			name = Tabbed;
 			sourceTree = "<group>";
@@ -286,6 +292,7 @@
 				ED9B38DD1C5059E700FC45B6 /* rsz_2high.png in Resources */,
 				ED9B390E1C532F9A00FC45B6 /* 145119083668802.gif in Resources */,
 				ED9B390F1C532F9A00FC45B6 /* rsz_placeholder-user-photo.png in Resources */,
+				ED9B39131C54552100FC45B6 /* rsz_ic_settings_48px-128.png in Resources */,
 				ED9B38CE1C5044D700FC45B6 /* prev.png in Resources */,
 				ED9B390D1C532F9A00FC45B6 /* blah.gif in Resources */,
 				ED9B38CF1C5044D700FC45B6 /* high.png in Resources */,
@@ -327,6 +334,7 @@
 				ED9B39061C52F3A900FC45B6 /* SearchViewController.swift in Sources */,
 				ED9B38EF1C518C5B00FC45B6 /* UIImageView+ImageLoader.swift in Sources */,
 				ED9B38ED1C518C5B00FC45B6 /* Manager.swift in Sources */,
+				ED9B39111C544B2900FC45B6 /* SettingsViewController.swift in Sources */,
 				ED9B38A61C501F4300FC45B6 /* AppDelegate.swift in Sources */,
 				ED9B39091C53229C00FC45B6 /* ProfileViewController.swift in Sources */,
 				ED9B38E11C5185A700FC45B6 /* MainViewController.swift in Sources */,
