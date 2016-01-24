@@ -4,6 +4,7 @@ var md5 = require('MD5');
 
 var userSchema = mongoose.Schema({
     name: String,
+    desc: String, 
     username: String,
     password: String,
     email: String,

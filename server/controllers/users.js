@@ -34,10 +34,12 @@ module.exports.login = function(req, res, next) {
             if (err)
                 return next(err);
             if (!user)
+                res.writeHead(400, {"Content-Type": "application/json"});
                 return res.json({ SERVER_RESPONSE: 0, SERVER_MESSAGE: "Wrong credentials" });
             req.logIn(user, function(err) {
                 if (err)
                     return next(err);
+                res.writeHead(200, {"Content-Type": "application/json"});
                 return res.json({ SERVER_RESPONSE: 1, SERVER_MESSAGE: "Logged in!" });
             });
         })(req, res, next);
@@ -95,6 +97,7 @@ module.exports.update = function(req, res) {
                 return res.status(401).end('Modifying other user');
             } else {
                 user.name = req.body.name ? req.body.name : user.name;
+                user.desc = req.body.dec ? req.body.desc : user.desc;
                 user.username = req.body.username ? req.body.username : user.username;
                 user.password = req.body.password ? user.generateHash(req.body.password) : user.password;
                 user.email = req.body.email ? req.body.email : user.email;
