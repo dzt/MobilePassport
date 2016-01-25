@@ -11,9 +11,49 @@ import UIKit
 class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var table : UITableView!
     @IBOutlet weak var delete : UIButton!
-    @IBAction func updateUsername(){
-    
+    @IBAction func deleteAccount(sender:UIButton){
+        let alert = UIAlertController(title: "Are you sure?", message: "Do you want to delete your account permanently?", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title:"Let me Rethink.", style: UIAlertActionStyle.Cancel, handler: nil))
+        let over = UIAlertAction(title: "It's Over", style: UIAlertActionStyle.Destructive) { (_) -> Void in
+            let headers = [
+                "cache-control": "no-cache",
+            ]
+            
+            
+            let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/user/delete")!,
+                cachePolicy: .UseProtocolCachePolicy,
+                timeoutInterval: 10.0)
+            request.HTTPMethod = "DELETE"
+            request.allHTTPHeaderFields = headers
+            
+            let session = NSURLSession.sharedSession()
+            let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+                if (error != nil) {
+                    print(error)
+                } else {
+                    let httpResponse = response as? NSHTTPURLResponse
+                    print(httpResponse)
+                    
+                    if (httpResponse?.statusCode == 200){
+                        dispatch_async(dispatch_get_main_queue(), {
+                            //segue to main view.
+                            self.keychain.setPasscode("MPPassword", passcode: "")
+                            self.keychain.setPasscode("MPUsername", passcode: "")
+                            
+                        })
+                    }else{
+                        print("error")
+                    }
+                    // use anyObj here
+                    print("json error: \(error)")
+                }
+            })
+            
+            dataTask.resume()
+        }
+        alert.addAction(over)
     }
+    let keychain = Keychain()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.table.dataSource = self
@@ -29,12 +69,218 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.row == 0){
+            let alertView = UIAlertController(title: "Update Username", message: "Enter your new username!", preferredStyle: .Alert)
+            alertView.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+                textField.placeholder = "Username"
+            })
+            alertView.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+            let updateUsername = UIAlertAction(title: "Update", style: .Default) { (_) in
+                let usernameTextField = alertView.textFields![0] as UITextField
+                print (usernameTextField.text)
+                let headers = [
+                    "cache-control": "no-cache",
+                    "content-type": "application/x-www-form-urlencoded"
+                ]
+                
+                let usernameStr = "username=" + usernameTextField.text!
+                let postData = NSMutableData(data: usernameStr.dataUsingEncoding(NSUTF8StringEncoding)!)
+                
+                let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/user/update")!,
+                    cachePolicy: .UseProtocolCachePolicy,
+                    timeoutInterval: 10.0)
+                request.HTTPMethod = "POST"
+                request.allHTTPHeaderFields = headers
+                request.HTTPBody = postData
+                
+                let session = NSURLSession.sharedSession()
+                let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+                    if (error != nil) {
+                        print(error)
+                    } else {
+                        let httpResponse = response as? NSHTTPURLResponse
+                        print(httpResponse)
+                        
+                        if (httpResponse?.statusCode == 200){
+                            dispatch_async(dispatch_get_main_queue(), {
+                                //segue to main view.
+                                alertView.textFields![0].resignFirstResponder()
+                                self.keychain.setPasscode("MPUsername", passcode: usernameTextField.text!)
+                            
+                            })
+                        }else{
+                            print("error")
+                        }
+                        // use anyObj here
+                        print("json error: \(error)")
+                    }
+                })
+                
+                dataTask.resume()
+
+            }
+            alertView.addAction(updateUsername)
+            self.presentViewController(alertView, animated: true, completion: nil)
+
         }
         if (indexPath.row == 1){
+            let alertView = UIAlertController(title: "Update Password", message: "Enter your new password!", preferredStyle: .Alert)
+            alertView.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+                textField.placeholder = "Password"
+            })
+            let updateUsername = UIAlertAction(title: "Update", style: .Default) { (_) in
+                let passwordTextField = alertView.textFields![0] as UITextField
+                print (passwordTextField.text)
+                let headers = [
+                    "cache-control": "no-cache",
+                    "content-type": "application/x-www-form-urlencoded"
+                ]
+                
+                let passwordStr = "password=" + passwordTextField.text!
+                let postData = NSMutableData(data: passwordStr.dataUsingEncoding(NSUTF8StringEncoding)!)
+                
+                let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/user/update")!,
+                    cachePolicy: .UseProtocolCachePolicy,
+                    timeoutInterval: 10.0)
+                request.HTTPMethod = "POST"
+                request.allHTTPHeaderFields = headers
+                request.HTTPBody = postData
+                
+                let session = NSURLSession.sharedSession()
+                let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+                    if (error != nil) {
+                        print(error)
+                    } else {
+                        let httpResponse = response as? NSHTTPURLResponse
+                        print(httpResponse)
+                        
+                        if (httpResponse?.statusCode == 200){
+                            dispatch_async(dispatch_get_main_queue(), {
+                                //segue to main view.
+                                alertView.textFields![0].resignFirstResponder()
+                                self.keychain.setPasscode("MPPassword", passcode: passwordTextField.text!)
+                            })
+                        }else{
+                            print("error")
+                        }
+                        // use anyObj here
+                        print("json error: \(error)")
+                    }
+                })
+                
+                dataTask.resume()
+                
+
+            }
+            alertView.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+            alertView.addAction(updateUsername)
+            self.presentViewController(alertView, animated: true, completion: nil)
+
         }
         if (indexPath.row == 2){
+            let alertView = UIAlertController(title: "Update Email", message: "Enter your email!", preferredStyle: .Alert)
+            alertView.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+                textField.placeholder = "Email"
+            })
+            let updateUsername = UIAlertAction(title: "Update", style: .Default) { (_) in
+                let emailTextField = alertView.textFields![0] as UITextField
+                print (emailTextField.text)
+                let headers = [
+                    "cache-control": "no-cache",
+                    "content-type": "application/x-www-form-urlencoded"
+                ]
+                
+                let emailStr = "email=" + emailTextField.text!
+                let postData = NSMutableData(data: emailStr.dataUsingEncoding(NSUTF8StringEncoding)!)
+                
+                let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/user/update")!,
+                    cachePolicy: .UseProtocolCachePolicy,
+                    timeoutInterval: 10.0)
+                request.HTTPMethod = "POST"
+                request.allHTTPHeaderFields = headers
+                request.HTTPBody = postData
+                
+                let session = NSURLSession.sharedSession()
+                let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+                    if (error != nil) {
+                        print(error)
+                    } else {
+                        let httpResponse = response as? NSHTTPURLResponse
+                        print(httpResponse)
+                        
+                        if (httpResponse?.statusCode == 200){
+                            dispatch_async(dispatch_get_main_queue(), {
+                                //segue to main view.
+                                alertView.textFields![0].resignFirstResponder()
+                            })
+                        }else{
+                            print("error")
+                        }
+                        // use anyObj here
+                        print("json error: \(error)")
+                    }
+                })
+                
+                dataTask.resume()
+                
+
+            }
+            alertView.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+            alertView.addAction(updateUsername)
+            self.presentViewController(alertView, animated: true, completion: nil)
+
         }
         if (indexPath.row == 3){
+            let alertView = UIAlertController(title: "Update Name", message: "Enter your name!", preferredStyle: .Alert)
+            alertView.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+                textField.placeholder = "Name"
+            })
+            let updateUsername = UIAlertAction(title: "Update", style: .Default) { (_) in
+                let nameTextField = alertView.textFields![0] as UITextField
+                print (nameTextField.text)
+                let headers = [
+                    "cache-control": "no-cache",
+                    "content-type": "application/x-www-form-urlencoded"
+                ]
+                
+                let nameStr = "username=" + nameTextField.text!
+                let postData = NSMutableData(data: nameStr.dataUsingEncoding(NSUTF8StringEncoding)!)
+                
+                let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/user/update")!,
+                    cachePolicy: .UseProtocolCachePolicy,
+                    timeoutInterval: 10.0)
+                request.HTTPMethod = "POST"
+                request.allHTTPHeaderFields = headers
+                request.HTTPBody = postData
+                
+                let session = NSURLSession.sharedSession()
+                let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+                    if (error != nil) {
+                        print(error)
+                    } else {
+                        let httpResponse = response as? NSHTTPURLResponse
+                        print(httpResponse)
+                        
+                        if (httpResponse?.statusCode == 200){
+                            dispatch_async(dispatch_get_main_queue(), {
+                                //segue to main view.
+                                alertView.textFields![0].resignFirstResponder()
+                            })
+                        }else{
+                            print("error")
+                        }
+                        // use anyObj here
+                        print("json error: \(error)")
+                    }
+                })
+                
+                dataTask.resume()
+                
+
+            }
+            alertView.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+            alertView.addAction(updateUsername)
+            self.presentViewController(alertView, animated: true, completion: nil)
+
         }
 
     }

@@ -38,7 +38,9 @@ class LoginViewController: UIViewController {
         logo.layer.masksToBounds = false
         logo.layer.cornerRadius = logo.frame.height/2
         logo.clipsToBounds = true
-
+        
+        //comment below to force login
+        
         if(self.keychain.getPasscode("MPPassword")! != "" && self.keychain.getPasscode("MPUsername")! != ""){
             self.loginRequestWithParams(self.keychain.getPasscode("MPUsername") as! String, passwordString: self.keychain.getPasscode("MPPassword") as! String)
         }

@@ -8,13 +8,15 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var username : UITextField!
     @IBOutlet weak var password : UITextField!
     @IBOutlet weak var email : UITextField!
     @IBOutlet weak var name : UITextField!
+    @IBOutlet weak var desc : UITextView!
     @IBOutlet weak var register : UIButton!
     
+    let keychain = Keychain()
     @IBAction func register(sender : UIButton){
         print("register")
         name.resignFirstResponder()
@@ -30,10 +32,12 @@ class RegisterViewController: UIViewController {
         let passwordString = "&password=" + self.password.text!
         let emailString = "&email=" + self.email.text!
         let nameString = "&name=" + self.name.text!
+        let descriptionString = "&desc=" + self.desc.text!
         let postData = NSMutableData(data: usernameString.dataUsingEncoding(NSUTF8StringEncoding)!)
         postData.appendData(passwordString.dataUsingEncoding(NSUTF8StringEncoding)!)
         postData.appendData(emailString.dataUsingEncoding(NSUTF8StringEncoding)!)
         postData.appendData(nameString.dataUsingEncoding(NSUTF8StringEncoding)!)
+        postData.appendData(descriptionString.dataUsingEncoding(NSUTF8StringEncoding)!)
         
         let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/signup")!,
             cachePolicy: .UseProtocolCachePolicy,
@@ -53,6 +57,8 @@ class RegisterViewController: UIViewController {
                 if (httpResponse?.statusCode == 200){
                     dispatch_async(dispatch_get_main_queue(), {
                         //segue to main view, etc.
+                        self.keychain.setPasscode("MPPassword", passcode: self.username.text!)
+                        self.keychain.setPasscode("MPUsername", passcode: self.password.text!)
                     })
                 }else{
                     print("error")
@@ -71,8 +77,14 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         self.register.layer.cornerRadius = 0.5 * register.bounds.size.width
         self.navigationItem.hidesBackButton = true;
-        
+        self.desc.delegate = self
+
         // Do any additional setup after loading the view.
+    }
+    func textViewDidBeginEditing(textView: UITextView) {
+        if(textView.text == "Description"){
+            textView.text = "";
+        }
     }
 
     override func didReceiveMemoryWarning() {
