@@ -34,15 +34,11 @@ module.exports.login = function(req, res, next) {
             if (err)
                 return next(err);
             if(!user)
-                return res.json({SERVER_RESPONSE: 0, SERVER_MESSAGE: "Fucked Up"})
+                return res.json({SERVER_RESPONSE: 0, SERVER_MESSAGE: "Wrong Credentials"})
             req.logIn(user, function(err) {
                 if (err)
                     return next(err);
                 if (!err)
-                     /*if (!user)
-                        res.writeHead(400, {"Content-Type": "application/json"});
-                        return res.json({ SERVER_RESPONSE: 0, SERVER_MESSAGE: "Wrong credentials" });*/
-                   
                     return res.json({ SERVER_RESPONSE: 1, SERVER_MESSAGE: "Logged in!" });
                 
             });
