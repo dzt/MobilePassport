@@ -52,6 +52,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             dataTask.resume()
         }
         alert.addAction(over)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     let keychain = Keychain()
     override func viewDidLoad() {
