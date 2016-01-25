@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var name : UILabel! = UILabel()
     @IBOutlet weak var username : UILabel! = UILabel()
     @IBOutlet weak var email : UILabel! = UILabel()
+    @IBOutlet weak var desc : UITextView! = UITextView()
     @IBOutlet weak var picture : UIImageView!
 
     var real = NSMutableArray()
@@ -24,6 +25,7 @@ class ProfileViewController: UIViewController {
         picture.clipsToBounds = true
         self.name.text = real[0] as? String
         self.username.text = real[1] as? String
+        self.desc.text = real[3] as? String
         let hash = real[2] as? String
         self.email.text = hash
         self.getProfileImage(self.md5(string: (hash?.lowercaseString)!))

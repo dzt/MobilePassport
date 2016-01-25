@@ -11,6 +11,53 @@ import UIKit
 class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var table : UITableView!
     @IBOutlet weak var delete : UIButton!
+    @IBOutlet weak var logout : UIButton!
+    
+    @IBAction func logoutAccount(sender:UIButton){
+        let alert = UIAlertController(title: "Do you want to logout?", message: "Are you sure you want to logout?", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title:"No", style: UIAlertActionStyle.Cancel, handler: nil))
+        let log = UIAlertAction(title: "Logout", style: UIAlertActionStyle.Destructive) { (_) -> Void in
+            let headers = [
+                "cache-control": "no-cache",
+            ]
+            
+            
+            let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/logout")!,
+                cachePolicy: .UseProtocolCachePolicy,
+                timeoutInterval: 10.0)
+            request.HTTPMethod = "POST"
+            request.allHTTPHeaderFields = headers
+            
+            let session = NSURLSession.sharedSession()
+            let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+                if (error != nil) {
+                    print(error)
+                } else {
+                    let httpResponse = response as? NSHTTPURLResponse
+                    print(httpResponse)
+                    
+                    if (httpResponse?.statusCode == 200){
+                        dispatch_async(dispatch_get_main_queue(), {
+                            //segue to main view.
+                            self.keychain.setPasscode("MPPassword", passcode: "")
+                            self.keychain.setPasscode("MPUsername", passcode: "")
+                            self.performSegueWithIdentifier("LogoutSegue", sender: self)
+                            
+                        })
+                    }else{
+                        print("error")
+                    }
+                    // use anyObj here
+                    print("json error: \(error)")
+                }
+            })
+            
+            dataTask.resume()
+        }
+        alert.addAction(log)
+        self.presentViewController(alert, animated: true, completion: nil)
+
+    }
     @IBAction func deleteAccount(sender:UIButton){
         let alert = UIAlertController(title: "Are you sure?", message: "Do you want to delete your account permanently?", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title:"Let me Rethink.", style: UIAlertActionStyle.Cancel, handler: nil))
@@ -39,6 +86,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
                             //segue to main view.
                             self.keychain.setPasscode("MPPassword", passcode: "")
                             self.keychain.setPasscode("MPUsername", passcode: "")
+                            self.performSegueWithIdentifier("LogoutSegue", sender: self)
                             
                         })
                     }else{
@@ -105,6 +153,8 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
                             dispatch_async(dispatch_get_main_queue(), {
                                 //segue to main view.
                                 alertView.textFields![0].resignFirstResponder()
+                                alertView.textFields![1].resignFirstResponder()
+
                                 self.keychain.setPasscode("MPUsername", passcode: usernameTextField.text!)
                             
                             })
@@ -124,12 +174,19 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
 
         }
         if (indexPath.row == 1){
-            let alertView = UIAlertController(title: "Update Password", message: "Enter your new password!", preferredStyle: .Alert)
+            let alertView = UIAlertController(title: "Update Password", message: "Enter your old and new password!", preferredStyle: .Alert)
+            alertView.addTextFieldWithConfigurationHandler({(textField) -> Void in
+                textField.placeholder = "Old Password"
+                textField.secureTextEntry = true;
+            })
             alertView.addTextFieldWithConfigurationHandler({ (textField) -> Void in
-                textField.placeholder = "Password"
+                textField.placeholder = "New Password"
+                textField.secureTextEntry = true;
             })
             let updateUsername = UIAlertAction(title: "Update", style: .Default) { (_) in
-                let passwordTextField = alertView.textFields![0] as UITextField
+                let oldText = alertView.textFields![0] as UITextField
+                if(oldText.text == self.keychain.getPasscode("MPPassword")){
+                let passwordTextField = alertView.textFields![1] as UITextField
                 print (passwordTextField.text)
                 let headers = [
                     "cache-control": "no-cache",
@@ -169,7 +226,9 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
                 })
                 
                 dataTask.resume()
-                
+                }else{
+                    self.updateFailure()
+                }
 
             }
             alertView.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
@@ -243,7 +302,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
                     "content-type": "application/x-www-form-urlencoded"
                 ]
                 
-                let nameStr = "username=" + nameTextField.text!
+                let nameStr = "name=" + nameTextField.text!
                 let postData = NSMutableData(data: nameStr.dataUsingEncoding(NSUTF8StringEncoding)!)
                 
                 let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/user/update")!,
@@ -307,6 +366,12 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func updateFailure(){
+        let o = UIAlertController(title: "Can't Update Password", message: "The Old Password was entered incorrectly so we can not verify your new Password", preferredStyle: .Alert)
+        let damn = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        o.addAction(damn)
+        self.presentViewController(o, animated: true, completion: nil)
     }
     
 

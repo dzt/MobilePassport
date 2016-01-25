@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var name : UILabel!
     @IBOutlet weak var username : UILabel!
     @IBOutlet weak var email : UILabel!
+    @IBOutlet weak var desc : UITextView!
     @IBOutlet weak var profile : UITabBarItem!
 
     var user = NSDictionary()
@@ -27,6 +28,10 @@ class MainViewController: UIViewController {
         image.layer.masksToBounds = false
         image.layer.cornerRadius = image.frame.height/2
         image.clipsToBounds = true
+        self.getUserData()
+               // Do any additional setup after loading the view.
+    }
+    func getUserData(){
         let headers = [
             "cache-control": "no-cache",
         ]
@@ -54,6 +59,7 @@ class MainViewController: UIViewController {
                             self.email.text = self.user.objectForKey("email") as? String
                             self.username.text = self.user.objectForKey("username") as? String
                             self.name.text = self.user.objectForKey("name") as? String
+                            self.desc.text = self.user.objectForKey("desc") as? String
                             let hash = self.user.objectForKey("email") as? String
                             self.getProfileImage(self.md5(string: (hash?.lowercaseString)!))
                             // use anyObj here
@@ -72,9 +78,7 @@ class MainViewController: UIViewController {
         dataTask.resume()
         
 
-        // Do any additional setup after loading the view.
     }
-  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -83,6 +87,9 @@ class MainViewController: UIViewController {
         let gravatarURL = "http://www.gravatar.com/avatar/" + string + "?s=480"
         let gravns = NSURL(string: gravatarURL)
         self.image.load(gravns!)
+    }
+    override func viewWillAppear(animated: Bool) {
+        self.getUserData()
     }
     func md5(string string: String) -> String {
         var digest = [UInt8](count: Int(CC_MD5_DIGEST_LENGTH), repeatedValue: 0)

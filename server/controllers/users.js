@@ -17,6 +17,7 @@ module.exports.create = function(req, res) {
             newUser.username = req.body.username;
             newUser.password = newUser.generateHash(req.body.password);
             newUser.email = req.body.email;
+            newUser.desc = req.body.desc;
 
             newUser.save();
 
@@ -34,7 +35,7 @@ module.exports.login = function(req, res, next) {
             if (err)
                 return next(err);
             if(!user)
-                return res.json({SERVER_RESPONSE: 0, SERVER_MESSAGE: "Wrong Credentials"})
+                return res.status(400).json({SERVER_RESPONSE: 0, SERVER_MESSAGE: "Wrong Credentials"});
             req.logIn(user, function(err) {
                 if (err)
                     return next(err);
