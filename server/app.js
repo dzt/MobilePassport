@@ -6,6 +6,7 @@ var express = require('express'),
   mongoose = require('mongoose'),
   passport = require('passport'),
   flash = require('connect-flash'),
+  socket.io = require('socket.io'),
   morgan = require('morgan'),
   cookieParser = require('cookie-parser'),
   bodyParser = require('body-parser'),
@@ -21,7 +22,7 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(session({ secret: 'ganggang3hunnaSoSa' }));
+app.use(session({ secret: 'your secret key' }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
