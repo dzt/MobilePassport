@@ -3,7 +3,12 @@
 Authentication with Passport.js on Mobile
 Created by <a href="http://petersoboyejo.com">Peter</a> and <a href="http://ichauster.github.io">Ivan Chau</a> (<a href="https://github.com/dzt/MobilePassport/graphs/contributors">barely</a>).
 <br>
+
 Check out the <a href="https://www.youtube.com/watch?v=C4ik82C5G8g">video demo</a>.
+[x] Android App
+[ ] iOS App
+[x] Server
+
 
 <img src="art/prev.png">
 
