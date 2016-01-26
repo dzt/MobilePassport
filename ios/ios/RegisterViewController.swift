@@ -17,6 +17,7 @@ class RegisterViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var register : UIButton!
     
     let keychain = Keychain()
+    var reg = false
     @IBAction func register(sender : UIButton){
         print("register")
         name.resignFirstResponder()
@@ -57,8 +58,13 @@ class RegisterViewController: UIViewController, UITextViewDelegate {
                 if (httpResponse?.statusCode == 200){
                     dispatch_async(dispatch_get_main_queue(), {
                         //segue to main view, etc.
-                        self.keychain.setPasscode("MPPassword", passcode: self.username.text!)
-                        self.keychain.setPasscode("MPUsername", passcode: self.password.text!)
+                        if(self.reg == false){
+                            self.keychain.setPasscode("MPPassword", passcode: self.password.text!)
+                            self.keychain.setPasscode("MPUsername", passcode: self.username.text!)
+                            self.performSegueWithIdentifier("LogSeg", sender: self)
+                            self.reg = true
+                        }
+
                     })
                 }else{
                     print("error")

@@ -98,7 +98,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         // Pass the selected object to the new view controller.
         if(segue.identifier == "ProfileSearch"){
             let profileController = segue.destinationViewController as! ProfileViewController
-            profileController.real = NSMutableArray(array: [self.query.objectForKey("name")!,self.query.objectForKey("username")!,self.query.objectForKey("email")!,self.query.objectForKey("desc")!])
+            if ((self.query.objectForKey("desc")) != nil){
+                profileController.real = NSMutableArray(array: [self.query.objectForKey("name")!,self.query.objectForKey("username")!,self.query.objectForKey("email")!,self.query.objectForKey("desc")!])
+            }else{
+                profileController.real = NSMutableArray(array: [self.query.objectForKey("name")!,self.query.objectForKey("username")!,self.query.objectForKey("email")!,"Descriptionless"])
+            }
 
         }
     }

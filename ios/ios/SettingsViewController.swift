@@ -153,7 +153,6 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
                             dispatch_async(dispatch_get_main_queue(), {
                                 //segue to main view.
                                 alertView.textFields![0].resignFirstResponder()
-                                alertView.textFields![1].resignFirstResponder()
 
                                 self.keychain.setPasscode("MPUsername", passcode: usernameTextField.text!)
                             
@@ -215,6 +214,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
                             dispatch_async(dispatch_get_main_queue(), {
                                 //segue to main view.
                                 alertView.textFields![0].resignFirstResponder()
+                                alertView.textFields![1].resignFirstResponder()
                                 self.keychain.setPasscode("MPPassword", passcode: passwordTextField.text!)
                             })
                         }else{

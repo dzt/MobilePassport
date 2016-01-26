@@ -651,6 +651,7 @@
                         <outlet property="password" destination="ahi-5r-K8q" id="Qlf-9L-JGg"/>
                         <outlet property="register" destination="Zua-GE-Q7n" id="Q7q-po-KvP"/>
                         <outlet property="username" destination="Yhp-Ff-d1T" id="xah-Bp-96g"/>
+                        <segue destination="Hut-ty-oBU" kind="show" identifier="LogSeg" id="RWs-bU-A5g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igR-sH-pbl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -664,6 +665,6 @@
         <image name="rsz_ic_settings_48px-128.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="w2n-iH-SFi"/>
+        <segue reference="RWs-bU-A5g"/>
     </inferredMetricsTieBreakers>
 </document>
