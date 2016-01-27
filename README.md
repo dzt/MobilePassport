@@ -8,7 +8,7 @@ Check out the <a href="https://www.youtube.com/watch?v=C4ik82C5G8g">video demo</
 <br>
 [x] Android App
 <br>
-[ ] iOS App
+[x] iOS App
 <br>
 [x] Server
 
