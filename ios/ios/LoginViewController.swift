@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var register : UIButton!
     @IBOutlet weak var logo : UIImageView!
 
-    
+    let socket = SocketIOClient(socketURL: NSURL(string:"localhost:3000")!)
     var loggedIn = false;
     let keychain = Keychain()
     var userData = NSDictionary()
@@ -34,6 +34,8 @@ class LoginViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.socket.connect()
+        self.addSocketHandlers()
         self.loggedIn = false;
         logo.layer.masksToBounds = false
         logo.layer.cornerRadius = logo.frame.height/2
@@ -45,6 +47,9 @@ class LoginViewController: UIViewController {
             self.loginRequestWithParams(self.keychain.getPasscode("MPUsername") as! String, passwordString: self.keychain.getPasscode("MPPassword") as! String)
         }
         // Do any additional setup after loading the view.
+    }
+    func addSocketHandlers(){
+        
     }
     func loginRequestWithParams(usernameString : String, passwordString : String){
         let headers = [
