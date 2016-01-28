@@ -49,7 +49,10 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     func addSocketHandlers(){
-        
+            // Our socket handlers go here
+        socket.on("connect") {data, ack in
+            print("socket connected")
+        }
     }
     func loginRequestWithParams(usernameString : String, passwordString : String){
         let headers = [
